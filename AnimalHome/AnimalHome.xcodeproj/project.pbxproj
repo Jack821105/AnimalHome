@@ -7,15 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FF8E3F9E27D284A40BFB1D7 /* Pods_AnimalHome_AnimalHomeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98D4A10C23D1D0270D2F5C6 /* Pods_AnimalHome_AnimalHomeUITests.framework */; };
+		238E4E78173D970C745B305C /* Pods_AnimalHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A86FBAFC12CC1328A3B4BA2 /* Pods_AnimalHome.framework */; };
+		F2A416E1A4EA85F3FAAEFC01 /* Pods_AnimalHomeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C717048FD003510D7EB545 /* Pods_AnimalHomeTests.framework */; };
 		FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D72C2781C43B001ED17C /* AppDelegate.swift */; };
-		FA63D72F2781C43B001ED17C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D72E2781C43B001ED17C /* SceneDelegate.swift */; };
-		FA63D7312781C43B001ED17C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D7302781C43B001ED17C /* ViewController.swift */; };
-		FA63D7342781C43B001ED17C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7322781C43B001ED17C /* Main.storyboard */; };
 		FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7352781C43C001ED17C /* Assets.xcassets */; };
 		FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7372781C43C001ED17C /* LaunchScreen.storyboard */; };
 		FA63D7442781C43C001ED17C /* AnimalHomeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D7432781C43C001ED17C /* AnimalHomeTests.swift */; };
 		FA63D74E2781C43C001ED17C /* AnimalHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D74D2781C43C001ED17C /* AnimalHomeUITests.swift */; };
 		FA63D7502781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D74F2781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift */; };
+		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +37,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07C717048FD003510D7EB545 /* Pods_AnimalHomeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimalHomeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2196049977F7CA46CC878C7D /* Pods-AnimalHomeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHomeTests.release.xcconfig"; path = "Target Support Files/Pods-AnimalHomeTests/Pods-AnimalHomeTests.release.xcconfig"; sourceTree = "<group>"; };
+		2305B4D20BAB078E2DD454B1 /* Pods-AnimalHome-AnimalHomeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHome-AnimalHomeUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalHome-AnimalHomeUITests/Pods-AnimalHome-AnimalHomeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2380C97B33DB961C39A3AB8F /* Pods-AnimalHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHome.release.xcconfig"; path = "Target Support Files/Pods-AnimalHome/Pods-AnimalHome.release.xcconfig"; sourceTree = "<group>"; };
+		3A86FBAFC12CC1328A3B4BA2 /* Pods_AnimalHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimalHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		993809B9075FE814390B68A5 /* Pods-AnimalHome-AnimalHomeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHome-AnimalHomeUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimalHome-AnimalHomeUITests/Pods-AnimalHome-AnimalHomeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A1FC3D2399AF17803CAFEFF1 /* Pods-AnimalHomeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHomeTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimalHomeTests/Pods-AnimalHomeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E98D4A10C23D1D0270D2F5C6 /* Pods_AnimalHome_AnimalHomeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimalHome_AnimalHomeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85C35A85B899992A544C9CC /* Pods-AnimalHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHome.debug.xcconfig"; path = "Target Support Files/Pods-AnimalHome/Pods-AnimalHome.debug.xcconfig"; sourceTree = "<group>"; };
 		FA63D7292781C43B001ED17C /* AnimalHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA63D72C2781C43B001ED17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FA63D72E2781C43B001ED17C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FA63D7302781C43B001ED17C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA63D7332781C43B001ED17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA63D7352781C43C001ED17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA63D7382781C43C001ED17C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA63D73A2781C43C001ED17C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +56,7 @@
 		FA63D7492781C43C001ED17C /* AnimalHomeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalHomeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA63D74D2781C43C001ED17C /* AnimalHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHomeUITests.swift; sourceTree = "<group>"; };
 		FA63D74F2781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				238E4E78173D970C745B305C /* Pods_AnimalHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2A416E1A4EA85F3FAAEFC01 /* Pods_AnimalHomeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +80,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FF8E3F9E27D284A40BFB1D7 /* Pods_AnimalHome_AnimalHomeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28B94EF43511CB6573EE219F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A86FBAFC12CC1328A3B4BA2 /* Pods_AnimalHome.framework */,
+				E98D4A10C23D1D0270D2F5C6 /* Pods_AnimalHome_AnimalHomeUITests.framework */,
+				07C717048FD003510D7EB545 /* Pods_AnimalHomeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C87FBDF487DDB631C4948DA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F85C35A85B899992A544C9CC /* Pods-AnimalHome.debug.xcconfig */,
+				2380C97B33DB961C39A3AB8F /* Pods-AnimalHome.release.xcconfig */,
+				2305B4D20BAB078E2DD454B1 /* Pods-AnimalHome-AnimalHomeUITests.debug.xcconfig */,
+				993809B9075FE814390B68A5 /* Pods-AnimalHome-AnimalHomeUITests.release.xcconfig */,
+				A1FC3D2399AF17803CAFEFF1 /* Pods-AnimalHomeTests.debug.xcconfig */,
+				2196049977F7CA46CC878C7D /* Pods-AnimalHomeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA63D7202781C43B001ED17C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +117,8 @@
 				FA63D7422781C43C001ED17C /* AnimalHomeTests */,
 				FA63D74C2781C43C001ED17C /* AnimalHomeUITests */,
 				FA63D72A2781C43B001ED17C /* Products */,
+				9C87FBDF487DDB631C4948DA /* Pods */,
+				28B94EF43511CB6573EE219F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +135,8 @@
 		FA63D72B2781C43B001ED17C /* AnimalHome */ = {
 			isa = PBXGroup;
 			children = (
+				FADBC2AB2781CA9500B9A26B /* Screen */,
 				FA63D72C2781C43B001ED17C /* AppDelegate.swift */,
-				FA63D72E2781C43B001ED17C /* SceneDelegate.swift */,
-				FA63D7302781C43B001ED17C /* ViewController.swift */,
-				FA63D7322781C43B001ED17C /* Main.storyboard */,
 				FA63D7352781C43C001ED17C /* Assets.xcassets */,
 				FA63D7372781C43C001ED17C /* LaunchScreen.storyboard */,
 				FA63D73A2781C43C001ED17C /* Info.plist */,
@@ -127,6 +161,22 @@
 			path = AnimalHomeUITests;
 			sourceTree = "<group>";
 		};
+		FADBC2AB2781CA9500B9A26B /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FADBC2AC2781CA9C00B9A26B /* Loading */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		FADBC2AC2781CA9C00B9A26B /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA63D7532781C43C001ED17C /* Build configuration list for PBXNativeTarget "AnimalHome" */;
 			buildPhases = (
+				FEBCD706B7E79AF977D9888F /* [CP] Check Pods Manifest.lock */,
 				FA63D7252781C43B001ED17C /* Sources */,
 				FA63D7262781C43B001ED17C /* Frameworks */,
 				FA63D7272781C43B001ED17C /* Resources */,
@@ -151,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA63D7562781C43C001ED17C /* Build configuration list for PBXNativeTarget "AnimalHomeTests" */;
 			buildPhases = (
+				34E95F07B97FABA0509677E6 /* [CP] Check Pods Manifest.lock */,
 				FA63D73B2781C43C001ED17C /* Sources */,
 				FA63D73C2781C43C001ED17C /* Frameworks */,
 				FA63D73D2781C43C001ED17C /* Resources */,
+				396FCEBD12A2CFF9FB8E6C05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +222,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA63D7592781C43C001ED17C /* Build configuration list for PBXNativeTarget "AnimalHomeUITests" */;
 			buildPhases = (
+				81976B25950646BE2393C5F2 /* [CP] Check Pods Manifest.lock */,
 				FA63D7452781C43C001ED17C /* Sources */,
 				FA63D7462781C43C001ED17C /* Frameworks */,
 				FA63D7472781C43C001ED17C /* Resources */,
@@ -233,7 +287,6 @@
 			files = (
 				FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */,
 				FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */,
-				FA63D7342781C43B001ED17C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +306,99 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34E95F07B97FABA0509677E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnimalHomeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		396FCEBD12A2CFF9FB8E6C05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnimalHomeTests/Pods-AnimalHomeTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AnimalHomeTests/Pods-AnimalHomeTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnimalHomeTests/Pods-AnimalHomeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81976B25950646BE2393C5F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnimalHome-AnimalHomeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEBCD706B7E79AF977D9888F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AnimalHome-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA63D7252781C43B001ED17C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA63D7312781C43B001ED17C /* ViewController.swift in Sources */,
 				FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */,
-				FA63D72F2781C43B001ED17C /* SceneDelegate.swift in Sources */,
+				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +435,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FA63D7322781C43B001ED17C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA63D7332781C43B001ED17C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA63D7372781C43C001ED17C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -434,6 +564,7 @@
 		};
 		FA63D7542781C43C001ED17C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F85C35A85B899992A544C9CC /* Pods-AnimalHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,7 +574,7 @@
 				INFOPLIST_FILE = AnimalHome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortraitUpsideDown;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -461,6 +592,7 @@
 		};
 		FA63D7552781C43C001ED17C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2380C97B33DB961C39A3AB8F /* Pods-AnimalHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -470,7 +602,7 @@
 				INFOPLIST_FILE = AnimalHome/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortraitUpsideDown;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -488,6 +620,7 @@
 		};
 		FA63D7572781C43C001ED17C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1FC3D2399AF17803CAFEFF1 /* Pods-AnimalHomeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -507,6 +640,7 @@
 		};
 		FA63D7582781C43C001ED17C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2196049977F7CA46CC878C7D /* Pods-AnimalHomeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -526,6 +660,7 @@
 		};
 		FA63D75A2781C43C001ED17C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2305B4D20BAB078E2DD454B1 /* Pods-AnimalHome-AnimalHomeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -543,6 +678,7 @@
 		};
 		FA63D75B2781C43C001ED17C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 993809B9075FE814390B68A5 /* Pods-AnimalHome-AnimalHomeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

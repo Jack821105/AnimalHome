@@ -1,0 +1,6 @@
+framework module Pods_AnimalHome_AnimalHomeUITests {
+  umbrella header "Pods-AnimalHome-AnimalHomeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
