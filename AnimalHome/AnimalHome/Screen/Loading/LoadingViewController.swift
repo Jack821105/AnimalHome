@@ -7,12 +7,20 @@
 
 import UIKit
 
+
+
 class LoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
-        // Do any additional setup after loading the view.
+        goToMainTab()
+    }
+    
+    private func goToMainTab() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let vc = MainTabBarController()
+        let na = UINavigationController(rootViewController: vc)
+        appDelegate.window?.rootViewController = na
     }
     
 

@@ -9,10 +9,6 @@ target 'AnimalHome' do
 
   # Pods for AnimalHome
 
-  target 'AnimalHomeTests' do
-    inherit! :search_paths
-    # Pods for testing
-    
     # 網路協定
     pod 'Alamofire', '~> 5.5'
 
@@ -22,11 +18,14 @@ target 'AnimalHome' do
     # 靜態檢查codestyle
     pod 'SwiftLint'
 
-    # 靜態檢查codestyle
-    pod 'SwiftLint'
-
     # make Auto Layout easy
     pod 'SnapKit', '~> 5.0.0'
+
+  target 'AnimalHomeTests' do
+    inherit! :search_paths
+    # Pods for testing
+    
+   
 
   end
 
