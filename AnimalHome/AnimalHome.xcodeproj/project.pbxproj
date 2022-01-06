@@ -20,6 +20,21 @@
 		FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD172781D82A0097B473 /* AnimalViewController.swift */; };
 		FA9ABD1C2781DA5C0097B473 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD1B2781DA5C0097B473 /* AnimalTableViewCell.swift */; };
 		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
+		FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */; };
+		FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4092786E819008C4D3A /* NibInstantiable.swift */; };
+		FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */; };
+		FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B40D2786F19B008C4D3A /* Ext_DateFormatter.swift */; };
+		FAF4B4102786F1B3008C4D3A /* TimeZoneExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B40F2786F1B3008C4D3A /* TimeZoneExtension.swift */; };
+		FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4112786F1C8008C4D3A /* Ext_Calendar.swift */; };
+		FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4132786F2EA008C4D3A /* Ext_NumberFormatter.swift */; };
+		FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B41C2786F413008C4D3A /* Logger.swift */; };
+		FAF4B4202786F63C008C4D3A /* FileDataProviderBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B41F2786F63C008C4D3A /* FileDataProviderBase.swift */; };
+		FAF4B4222786F6BA008C4D3A /* FileDataCacheBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4212786F6BA008C4D3A /* FileDataCacheBase.swift */; };
+		FAF4B4242786F88B008C4D3A /* FileDataCacheConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4232786F88B008C4D3A /* FileDataCacheConfig.swift */; };
+		FAF4B4272786F8D3008C4D3A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */; };
+		FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */; };
+		FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B42B2786F934008C4D3A /* ReloadTime.swift */; };
+		FAF4B4322786FE03008C4D3A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4312786FE03008C4D3A /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +78,21 @@
 		FA9ABD172781D82A0097B473 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		FA9ABD1B2781DA5C0097B473 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
 		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		FAF4B4092786E819008C4D3A /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
+		FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewInstantiable.swift; sourceTree = "<group>"; };
+		FAF4B40D2786F19B008C4D3A /* Ext_DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_DateFormatter.swift; sourceTree = "<group>"; };
+		FAF4B40F2786F1B3008C4D3A /* TimeZoneExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneExtension.swift; sourceTree = "<group>"; };
+		FAF4B4112786F1C8008C4D3A /* Ext_Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Calendar.swift; sourceTree = "<group>"; };
+		FAF4B4132786F2EA008C4D3A /* Ext_NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_NumberFormatter.swift; sourceTree = "<group>"; };
+		FAF4B41C2786F413008C4D3A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FAF4B41F2786F63C008C4D3A /* FileDataProviderBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataProviderBase.swift; sourceTree = "<group>"; };
+		FAF4B4212786F6BA008C4D3A /* FileDataCacheBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataCacheBase.swift; sourceTree = "<group>"; };
+		FAF4B4232786F88B008C4D3A /* FileDataCacheConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDataCacheConfig.swift; sourceTree = "<group>"; };
+		FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Encodable.swift; sourceTree = "<group>"; };
+		FAF4B42B2786F934008C4D3A /* ReloadTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTime.swift; sourceTree = "<group>"; };
+		FAF4B4312786FE03008C4D3A /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +171,10 @@
 		FA63D72B2781C43B001ED17C /* AnimalHome */ = {
 			isa = PBXGroup;
 			children = (
+				FAF4B42F2786FDC3008C4D3A /* APIManager */,
+				FAF4B41B2786F40E008C4D3A /* Tool */,
+				FAF4B4182786F3AA008C4D3A /* Cache */,
+				FAF4B4062786E7A7008C4D3A /* Extension */,
 				FADBC2AB2781CA9500B9A26B /* Screen */,
 				FA63D72C2781C43B001ED17C /* AppDelegate.swift */,
 				FA63D7352781C43C001ED17C /* Assets.xcassets */,
@@ -224,6 +258,97 @@
 				FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		FAF4B4062786E7A7008C4D3A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4282786F903008C4D3A /* Encodable */,
+				FAF4B4252786F8CC008C4D3A /* String */,
+				FAF4B4172786F31B008C4D3A /* Number */,
+				FAF4B4162786F306008C4D3A /* Date */,
+				FAF4B4152786F2F9008C4D3A /* View */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAF4B4152786F2F9008C4D3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */,
+				FAF4B4092786E819008C4D3A /* NibInstantiable.swift */,
+				FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAF4B4162786F306008C4D3A /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B40D2786F19B008C4D3A /* Ext_DateFormatter.swift */,
+				FAF4B40F2786F1B3008C4D3A /* TimeZoneExtension.swift */,
+				FAF4B4112786F1C8008C4D3A /* Ext_Calendar.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		FAF4B4172786F31B008C4D3A /* Number */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4132786F2EA008C4D3A /* Ext_NumberFormatter.swift */,
+			);
+			path = Number;
+			sourceTree = "<group>";
+		};
+		FAF4B4182786F3AA008C4D3A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B41F2786F63C008C4D3A /* FileDataProviderBase.swift */,
+				FAF4B4212786F6BA008C4D3A /* FileDataCacheBase.swift */,
+				FAF4B4232786F88B008C4D3A /* FileDataCacheConfig.swift */,
+				FAF4B42B2786F934008C4D3A /* ReloadTime.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		FAF4B41B2786F40E008C4D3A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B41C2786F413008C4D3A /* Logger.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		FAF4B4252786F8CC008C4D3A /* String */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */,
+			);
+			path = String;
+			sourceTree = "<group>";
+		};
+		FAF4B4282786F903008C4D3A /* Encodable */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */,
+			);
+			path = Encodable;
+			sourceTree = "<group>";
+		};
+		FAF4B42F2786FDC3008C4D3A /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4302786FDF1008C4D3A /* Error */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		FAF4B4302786FDF1008C4D3A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B4312786FE03008C4D3A /* CustomError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,11 +589,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF4B4102786F1B3008C4D3A /* TimeZoneExtension.swift in Sources */,
+				FAF4B4202786F63C008C4D3A /* FileDataProviderBase.swift in Sources */,
 				FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */,
+				FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */,
+				FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */,
+				FAF4B4322786FE03008C4D3A /* CustomError.swift in Sources */,
 				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
+				FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */,
 				FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */,
+				FAF4B4242786F88B008C4D3A /* FileDataCacheConfig.swift in Sources */,
 				FA9ABD1C2781DA5C0097B473 /* AnimalTableViewCell.swift in Sources */,
+				FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */,
 				FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */,
+				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
+				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
+				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,
+				FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */,
+				FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */,
+				FAF4B4222786F6BA008C4D3A /* FileDataCacheBase.swift in Sources */,
+				FAF4B4272786F8D3008C4D3A /* StringExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

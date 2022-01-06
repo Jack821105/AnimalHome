@@ -21,6 +21,7 @@ target 'AnimalHome' do
     # make Auto Layout easy
     pod 'SnapKit', '~> 5.0.0'
 
+
   target 'AnimalHomeTests' do
     inherit! :search_paths
     # Pods for testing
