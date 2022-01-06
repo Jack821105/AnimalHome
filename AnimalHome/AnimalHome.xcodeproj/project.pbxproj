@@ -19,6 +19,10 @@
 		FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */; };
 		FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD172781D82A0097B473 /* AnimalViewController.swift */; };
 		FA9ABD1C2781DA5C0097B473 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD1B2781DA5C0097B473 /* AnimalTableViewCell.swift */; };
+		FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */; };
+		FAA9B41E278756D40066F26E /* Ext_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B41D278756D40066F26E /* Ext_UIColor.swift */; };
+		FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */; };
+		FAA9B423278759B40066F26E /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B422278759B40066F26E /* AnimalViewModel.swift */; };
 		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
 		FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */; };
 		FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4092786E819008C4D3A /* NibInstantiable.swift */; };
@@ -34,7 +38,10 @@
 		FAF4B4272786F8D3008C4D3A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */; };
 		FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */; };
 		FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B42B2786F934008C4D3A /* ReloadTime.swift */; };
-		FAF4B4322786FE03008C4D3A /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4312786FE03008C4D3A /* CustomError.swift */; };
+		FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4332787042B008C4D3A /* APIManager.swift */; };
+		FAF4B43627870A3E008C4D3A /* GeneralTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43527870A3E008C4D3A /* GeneralTool.swift */; };
+		FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43827871F7F008C4D3A /* DomainManager.swift */; };
+		FAF4B43E27872457008C4D3A /* AnimalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43D27872457008C4D3A /* AnimalCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,10 @@
 		FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA9ABD172781D82A0097B473 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		FA9ABD1B2781DA5C0097B473 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
+		FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalViewController.storyboard; sourceTree = "<group>"; };
+		FAA9B41D278756D40066F26E /* Ext_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor.swift; sourceTree = "<group>"; };
+		FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIFont.swift; sourceTree = "<group>"; };
+		FAA9B422278759B40066F26E /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		FAF4B4092786E819008C4D3A /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
@@ -92,7 +103,10 @@
 		FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_Encodable.swift; sourceTree = "<group>"; };
 		FAF4B42B2786F934008C4D3A /* ReloadTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadTime.swift; sourceTree = "<group>"; };
-		FAF4B4312786FE03008C4D3A /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		FAF4B4332787042B008C4D3A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		FAF4B43527870A3E008C4D3A /* GeneralTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTool.swift; sourceTree = "<group>"; };
+		FAF4B43827871F7F008C4D3A /* DomainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainManager.swift; sourceTree = "<group>"; };
+		FAF4B43D27872457008C4D3A /* AnimalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +185,7 @@
 		FA63D72B2781C43B001ED17C /* AnimalHome */ = {
 			isa = PBXGroup;
 			children = (
+				FAF4B43727871F76008C4D3A /* DomainManager */,
 				FAF4B42F2786FDC3008C4D3A /* APIManager */,
 				FAF4B41B2786F40E008C4D3A /* Tool */,
 				FAF4B4182786F3AA008C4D3A /* Cache */,
@@ -212,6 +227,8 @@
 		FA9ABD152781D7F60097B473 /* AnimalTab */ = {
 			isa = PBXGroup;
 			children = (
+				FAA9B421278759930066F26E /* ViewModel */,
+				FAF4B43A2787241E008C4D3A /* Cache */,
 				FA9ABD192781DA3D0097B473 /* View */,
 				FA9ABD162781D8080097B473 /* ViewController */,
 			);
@@ -222,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9ABD172781D82A0097B473 /* AnimalViewController.swift */,
+				FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -240,6 +258,14 @@
 				FA9ABD1B2781DA5C0097B473 /* AnimalTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FAA9B421278759930066F26E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAA9B422278759B40066F26E /* AnimalViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FADBC2AB2781CA9500B9A26B /* Screen */ = {
@@ -278,6 +304,7 @@
 				FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */,
 				FAF4B4092786E819008C4D3A /* NibInstantiable.swift */,
 				FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */,
+				FAA9B41D278756D40066F26E /* Ext_UIColor.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */,
+				FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */,
 			);
 			path = String;
 			sourceTree = "<group>";
@@ -331,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */,
+				FAF4B43527870A3E008C4D3A /* GeneralTool.swift */,
 			);
 			path = Encodable;
 			sourceTree = "<group>";
@@ -338,17 +367,25 @@
 		FAF4B42F2786FDC3008C4D3A /* APIManager */ = {
 			isa = PBXGroup;
 			children = (
-				FAF4B4302786FDF1008C4D3A /* Error */,
+				FAF4B4332787042B008C4D3A /* APIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
 		};
-		FAF4B4302786FDF1008C4D3A /* Error */ = {
+		FAF4B43727871F76008C4D3A /* DomainManager */ = {
 			isa = PBXGroup;
 			children = (
-				FAF4B4312786FE03008C4D3A /* CustomError.swift */,
+				FAF4B43827871F7F008C4D3A /* DomainManager.swift */,
 			);
-			path = Error;
+			path = DomainManager;
+			sourceTree = "<group>";
+		};
+		FAF4B43A2787241E008C4D3A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FAF4B43D27872457008C4D3A /* AnimalCache.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */,
+				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
 				FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,14 +632,20 @@
 				FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */,
 				FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */,
 				FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */,
-				FAF4B4322786FE03008C4D3A /* CustomError.swift in Sources */,
+				FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */,
 				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
 				FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */,
+				FAA9B423278759B40066F26E /* AnimalViewModel.swift in Sources */,
+				FAF4B43627870A3E008C4D3A /* GeneralTool.swift in Sources */,
+				FAF4B43E27872457008C4D3A /* AnimalCache.swift in Sources */,
+				FAA9B41E278756D40066F26E /* Ext_UIColor.swift in Sources */,
 				FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */,
 				FAF4B4242786F88B008C4D3A /* FileDataCacheConfig.swift in Sources */,
 				FA9ABD1C2781DA5C0097B473 /* AnimalTableViewCell.swift in Sources */,
 				FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */,
 				FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */,
+				FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */,
+				FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */,
 				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
 				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,

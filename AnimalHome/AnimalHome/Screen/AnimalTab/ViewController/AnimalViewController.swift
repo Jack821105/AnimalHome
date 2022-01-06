@@ -8,9 +8,12 @@
 import UIKit
 import SnapKit
 
+// MARK: - StoryboardInstantiable
+
+extension AnimalViewController: StoryboardInstantiable {}
+
 /// 動物主頁
 class AnimalViewController: UIViewController {
-
     
     private lazy var tableView: UITableView = {
         let view = UITableView()
@@ -18,15 +21,23 @@ class AnimalViewController: UIViewController {
         return view
     }()
     
-    private var infos: [String] = ["1", "2", "3", "4"]
+    private var infos: [Animal] = []
+    
+    private lazy var viewModel: AnimalViewModel = {
+        let viewModel = AnimalViewModel()
+        viewModel.delegate = self
+        return viewModel
+    }()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = .gray
         register()
         setupTableView()
         setupUI()
+        viewModel.featchAPI()
     }
     
     // MARK: - SetupUI
@@ -65,17 +76,31 @@ extension AnimalViewController: UITableViewDelegate {
 extension AnimalViewController: UITableViewDataSource {
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return infos.count
+        return viewModel.catInfos.isEmpty ? 0 : viewModel.catInfos.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as! AnimalTableViewCell
-        let info = infos[indexPath.row]
-        print("JACK DEV \(info)")
+        let info = viewModel.catInfos[indexPath.row]
         cell.set(info: info)
         return cell
     }
     
+    
+}
+
+
+// MARK: - AnimalViewModelDelegate
+
+extension AnimalViewController: AnimalViewModelDelegate {
+    
+    func updateInfo() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+            print("\(self.viewModel.catInfos.first)")
+//            print("\(self.viewModel.dagInfos.first)")
+        }
+    }
     
 }

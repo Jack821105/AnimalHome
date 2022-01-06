@@ -11,7 +11,6 @@ class MainTabBarController: UITabBarController {
     
     private lazy var AnimalVC: AnimalViewController = {
         let vc = AnimalViewController()
-        vc.view.backgroundColor = .blue
         return vc
     }()
     
@@ -24,7 +23,8 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBar.backgroundColor = .darkGray
+        self.view.backgroundColor = .green
+        self.tabBar.backgroundColor = .orange
         setupViewController()
     }
     
@@ -46,5 +46,17 @@ class MainTabBarController: UITabBarController {
     }
     
     
+    
+}
+
+// MARK: - UITabBarDelegate
+
+extension MainTabBarController {
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        let title = item.title
+        self.navigationController?.title = title
+        self.navigationController?.navigationBar.tintColor = .red
+    }
     
 }

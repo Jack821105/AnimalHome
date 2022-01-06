@@ -37,8 +37,8 @@ class AnimalTableViewCell: UITableViewCell {
         }
     }
     
-    func set(info: String) {
-        title.text = info
+    func set(info: Animal) {
+        title.text = info.age
         title.textColor = .green
     }
 

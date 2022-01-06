@@ -11,7 +11,7 @@ protocol FileDataProvider {
     func updateCacheIfNeed(complete: @escaping () -> ())
 }
 
-/// 拉整張表(所有股票的資訊) 存起來 一天更新數次
+/// 拉整張表 存起來 一天更新數次
 class FileDataProviderBase<T>: FileDataProvider where T: Codable {
     
     typealias CacheData = T
