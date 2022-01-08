@@ -40,9 +40,6 @@ class MainTabBarController: UITabBarController {
         let tabOneBarItem2 = UITabBarItem(title: "關於", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
         na1.tabBarItem = tabOneBarItem1
         na2.tabBarItem = tabOneBarItem2
-        
-        na1.navigationBar.isHidden = true
-        na2.navigationBar.isHidden = true
     }
     
     

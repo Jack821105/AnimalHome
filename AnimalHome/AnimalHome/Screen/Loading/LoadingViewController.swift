@@ -19,8 +19,7 @@ class LoadingViewController: UIViewController {
     private func goToMainTab() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let vc = MainTabBarController()
-        let na = UINavigationController(rootViewController: vc)
-        appDelegate.window?.rootViewController = na
+        appDelegate.window?.rootViewController = vc
     }
     
 

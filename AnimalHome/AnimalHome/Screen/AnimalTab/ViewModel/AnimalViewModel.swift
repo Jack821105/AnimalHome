@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
  
 protocol AnimalViewModelDelegate: AnyObject {
@@ -17,9 +18,11 @@ protocol AnimalViewModelDelegate: AnyObject {
 
 class AnimalViewModel {
     
-    private(set) var dogInfos: [Animal] = []
+    private var dogInfos: [Animal] = []
     
-    private(set) var catInfos: [Animal] = []
+    private var catInfos: [Animal] = []
+    
+    var currentType: AnimalViewController.AnimalType = .dog
     
     weak var delegate: AnimalViewModelDelegate?
     
@@ -43,9 +46,16 @@ class AnimalViewModel {
         self.catInfos = animalList.filter {
             $0.animalType == .cat
         }
-        
     }
     
-    
+    func getCurrntTypeInfos() -> [Animal] {
+        
+        switch currentType {
+            case .dog:
+                return dogInfos
+            case .cat:
+                return catInfos
+        }
+    }
     
 }

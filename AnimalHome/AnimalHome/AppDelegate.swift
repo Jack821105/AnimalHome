@@ -41,6 +41,10 @@ extension AppDelegate {
     
     func setupNavigationBarAppearance() {
         
+        if #available(iOS 15.0, *) {
+            UITableView.appearance().sectionHeaderTopPadding = 0
+        }
+        
         if #available(iOS 13.0, *) {
             let navigationBarAppearance = UINavigationBarAppearance()
             navigationBarAppearance.configureWithDefaultBackground()

@@ -18,10 +18,15 @@ class AnimalViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.separatorStyle = .none
         return view
     }()
     
-    private var infos: [Animal] = []
+    private lazy var headerView: AnimalHeaderView = {
+        let view = AnimalHeaderView.instantiate()
+        view.delegate = self
+        return view
+    }()
     
     private lazy var viewModel: AnimalViewModel = {
         let viewModel = AnimalViewModel()
@@ -35,8 +40,8 @@ class AnimalViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
         register()
-        setupTableView()
         setupUI()
+        setupTableView()
         viewModel.featchAPI()
     }
     
@@ -50,39 +55,76 @@ class AnimalViewController: UIViewController {
     }
     
     // MARK: - Func
-
+    
     private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
     private func register() {
-        self.tableView.register(AnimalTableViewCell.classForCoder(), forCellReuseIdentifier: "AnimalTableViewCell")
+        let nib = UINib(nibName: AnimalTableViewCell.nibName, bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: AnimalTableViewCell.nibName)
     }
-    
-
     
     
 }
 
+// MARK: - 擴充區
+
+extension AnimalViewController {
+    
+    enum AnimalType {
+        
+        case dog
+        
+        case cat
+    }
+    
+}
+
+
 // MARK: - UITableViewDelegate
 
 extension AnimalViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+            return headerView
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return 30
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
     
 }
 
 // MARK: - UITableViewDataSource
 
 extension AnimalViewController: UITableViewDataSource {
-   
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.catInfos.isEmpty ? 0 : viewModel.catInfos.count
+        let infos = viewModel.getCurrntTypeInfos()
+        return infos.isEmpty ? 0 : infos.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as! AnimalTableViewCell
-        let info = viewModel.catInfos[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnimalTableViewCell.nibName, for: indexPath) as! AnimalTableViewCell
+        let infos = viewModel.getCurrntTypeInfos()
+        let info = infos[indexPath.row]
         cell.set(info: info)
         return cell
     }
@@ -98,9 +140,22 @@ extension AnimalViewController: AnimalViewModelDelegate {
     func updateInfo() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            print("\(self.viewModel.catInfos.first)")
-//            print("\(self.viewModel.dagInfos.first)")
         }
     }
     
 }
+
+
+// MARK: - AnimalHeaderViewDelegate
+
+extension AnimalViewController: AnimalHeaderViewDelegate {
+    
+    func didClickHeaderButton(currentType: AnimalType) {
+        DispatchQueue.main.async {
+            self.viewModel.currentType = currentType
+            self.tableView.reloadData()
+        }
+    }
+    
+}
+
