@@ -109,6 +109,14 @@ extension AnimalViewController: UITableViewDelegate {
         return 160
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let infos = viewModel.getCurrntTypeInfos()
+        let info = infos[indexPath.row]
+        let vc = AnimalDetailViewController.instantiate()
+        vc.setInfo(info: info)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 // MARK: - UITableViewDataSource

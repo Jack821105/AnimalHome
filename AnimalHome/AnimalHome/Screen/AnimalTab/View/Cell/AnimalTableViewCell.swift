@@ -33,6 +33,7 @@ class AnimalTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        animalImageView.layer.cornerRadius = 30
         clearUI()
         
     }
@@ -48,6 +49,8 @@ class AnimalTableViewCell: UITableViewCell {
         sexLabel.text = ""
         colorLabel.text = ""
     }
+    
+    
     
     func set(info: Animal) {
         
@@ -65,7 +68,15 @@ class AnimalTableViewCell: UITableViewCell {
             colorLabel.text = "顏色: \(color)"
             colorLabel.textColor = .white
         }
-        animalImageView.sd_setImage(with: URL(string: info.urlImage!))
+        
+        animalImageView.sd_setImage(with: URL(string: info.urlImage!)) { _, error, _, _ in
+            if let _ = error {
+                DispatchQueue.main.async {
+                    self.animalImageView.image = UIImage(systemName: "xmark.app")
+                }
+            }
+        }
+        
         
     }
     
