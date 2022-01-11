@@ -16,6 +16,12 @@ class LoadingViewController: UIViewController {
         goToMainTab()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       
+    }
+    
     private func goToMainTab() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let vc = MainTabBarController()

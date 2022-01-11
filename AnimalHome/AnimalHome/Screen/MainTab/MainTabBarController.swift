@@ -21,6 +21,12 @@ class MainTabBarController: UITabBarController {
         setupViewController()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 拉取並啟用 AppConfig
+        ConfigModel.shared.fetchAndActivate()
+    }
 
     
     private func setupViewController() {

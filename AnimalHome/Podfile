@@ -1,5 +1,28 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '12.0'
+
+
+def google_pod_install
+  
+   # 分析
+  pod 'Firebase/Analytics'
+  
+  # 雲消息
+  pod 'Firebase/Messaging'
+
+  # 崩潰報告
+  pod 'Firebase/Crashlytics'
+
+  # 動態鏈接
+  pod 'Firebase/DynamicLinks'
+
+  # 應用內消息
+  pod 'Firebase/InAppMessaging'
+
+  # 性能監控
+  pod 'Firebase/Performance'
+
+end
 
 
 
@@ -21,6 +44,7 @@ target 'AnimalHome' do
     # make Auto Layout easy
     pod 'SnapKit', '~> 5.0.0'
 
+    google_pod_install
 
   target 'AnimalHomeTests' do
     inherit! :search_paths

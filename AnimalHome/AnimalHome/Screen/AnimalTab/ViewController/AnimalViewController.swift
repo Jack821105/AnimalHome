@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import FirebaseRemoteConfig
 
 // MARK: - StoryboardInstantiable
 
@@ -52,6 +53,12 @@ class AnimalViewController: UIViewController {
         setupUI()
         setupTableView()
         viewModel.featchAPI()
+        
+        let remoteConfig = RemoteConfig.remoteConfig()
+        let str = remoteConfig["Test"].stringValue
+        print("JACK Dev \(str)")
+        
+         
     }
     
     // MARK: - SetupUI
