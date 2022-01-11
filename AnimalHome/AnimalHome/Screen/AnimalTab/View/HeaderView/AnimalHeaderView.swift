@@ -24,6 +24,7 @@ extension AnimalHeaderView: UIViewInstantiable {}
 
 class AnimalHeaderView: UIView {
 
+    static let height: CGFloat = 60
     
     private var currentType: AnimalViewController.AnimalType = .dog
     

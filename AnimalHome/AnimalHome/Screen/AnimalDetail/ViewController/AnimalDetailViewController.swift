@@ -16,12 +16,20 @@ extension AnimalDetailViewController: StoryboardInstantiable {}
 
 class AnimalDetailViewController: UIViewController {
 
-    
-    private lazy var animalImageView: UIImageView = {
-        let view = UIImageView()
+    private lazy var tabelView: UITableView = {
+        let view = UITableView()
+        view.separatorStyle = .none
+        view.backgroundColor = .clear
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var headerView: AnimalDetailHeaderView = {
+        let view = AnimalDetailHeaderView.instantiate()
+        return view
+    }()
+    
+    private var info: Animal?
      
     
     // MARK: - Life Cycle
@@ -29,31 +37,138 @@ class AnimalDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        register()
+        setupTableView()
     }
     
     
     func setInfo(info: Animal) {
-        animalImageView.sd_setImage(with: URL(string: info.urlImage!)) { _, error, _, _ in
-            if let _ = error {
-                DispatchQueue.main.async {
-                    self.animalImageView.image = UIImage(systemName: "xmark.app")
-                }
-            }
-        }
+        self.headerView.set(info: info)
+        self.info = info
     }
     
     
     private func setupUI() {
-        
-        self.view.addSubview(animalImageView)
-        animalImageView.snp.makeConstraints {
-            $0.top.left.right.equalTo(self.view)
-            $0.height.equalTo(300)
-            
+        self.view.addSubview(tabelView)
+        tabelView.snp.makeConstraints {
+            $0.left.top.right.bottom.equalTo(self.view).offset(0)
         }
-        
     }
 
+    private func register() {
+        let nib = UINib(nibName: AnimalDetailTableViewCell.nibName, bundle: nil)
+        tabelView.register(nib, forCellReuseIdentifier: AnimalDetailTableViewCell.nibName)
+    }
+    
+    private func setupTableView() {
+        tabelView.delegate = self
+        tabelView.dataSource = self
+    }
 
+}
+
+// MARK: - UITableViewDelegate
+
+extension AnimalDetailViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        switch section {
+        case 0:
+            return headerView
+        default:
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        case 0:
+            return AnimalDetailHeaderView.height
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+}
+
+// MARK: - UITableViewDataSource
+
+extension AnimalDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 11
+    
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnimalDetailTableViewCell.nibName, for: indexPath) as! AnimalDetailTableViewCell
+        let title = getTitle(index: indexPath.row)
+        let detail = getDetail(index: indexPath.row)
+        cell.set(title: title, detail: detail)
+        return cell
+    }
+    
+    private func getTitle(index: Int) -> String? {
+        switch index {
+        case 0:
+            return "年紀"
+        case 1:
+            return "性別"
+        case 2:
+            return "體型"
+        case 3:
+            return "顏色"
+        case 4:
+            return "施打狂犬病疫苗"
+        case 5:
+            return "是否絕育"
+        case 6:
+            return "發現地"
+        case 7:
+            return "收容所名稱"
+        case 8:
+            return "容所地址"
+        case 9:
+            return "收容所電話"
+        case 10:
+            return "資料備註"
+        default:
+            return nil
+        }
+    }
+    
+    private func getDetail(index: Int) -> String? {
+        switch index {
+        case 0:
+            return info?.age
+        case 1:
+            return info?.sex?.getTitle()
+        case 2:
+            return info?.bodytype?.getTitle()
+        case 3:
+            return info?.colour
+        case 4:
+            return info?.bacterin
+        case 5:
+            return info?.sterilization
+        case 6:
+            return info?.foundplace
+        case 7:
+            return info?.shelterName
+        case 8:
+            return info?.shelterAddress
+        case 9:
+            return info?.shelterTel
+        case 10:
+            return info?.remark
+        default:
+            return nil
+        }
+    }
+    
+    
 }

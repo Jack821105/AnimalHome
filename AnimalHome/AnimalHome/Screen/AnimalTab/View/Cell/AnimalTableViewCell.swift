@@ -16,6 +16,9 @@ extension AnimalTableViewCell: NibInstantiable {}
 
 class AnimalTableViewCell: UITableViewCell {
 
+    
+    static let height: CGFloat = 160.0
+    
     // MARK: - IBOutlet
     
     /// 動物圖

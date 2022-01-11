@@ -17,6 +17,10 @@
 		FA3071A32789FB0C0021B006 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A22789FB0C0021B006 /* Animal.swift */; };
 		FA3071A7278A08220021B006 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A6278A08220021B006 /* AnimalDetailViewController.swift */; };
 		FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */; };
+		FA62DCD4278DB7290096B523 /* AnimalDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62DCD3278DB7290096B523 /* AnimalDetailHeaderView.swift */; };
+		FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCD5278DB7B00096B523 /* AnimalDetailHeaderView.xib */; };
+		FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62DCD8278DBCF10096B523 /* AnimalDetailTableViewCell.swift */; };
+		FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCD9278DBCF10096B523 /* AnimalDetailTableViewCell.xib */; };
 		FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D72C2781C43B001ED17C /* AppDelegate.swift */; };
 		FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7352781C43C001ED17C /* Assets.xcassets */; };
 		FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7372781C43C001ED17C /* LaunchScreen.storyboard */; };
@@ -84,6 +88,10 @@
 		FA3071A22789FB0C0021B006 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		FA3071A6278A08220021B006 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalDetailViewController.storyboard; sourceTree = "<group>"; };
+		FA62DCD3278DB7290096B523 /* AnimalDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailHeaderView.swift; sourceTree = "<group>"; };
+		FA62DCD5278DB7B00096B523 /* AnimalDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailHeaderView.xib; sourceTree = "<group>"; };
+		FA62DCD8278DBCF10096B523 /* AnimalDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailTableViewCell.swift; sourceTree = "<group>"; };
+		FA62DCD9278DBCF10096B523 /* AnimalDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailTableViewCell.xib; sourceTree = "<group>"; };
 		FA63D7292781C43B001ED17C /* AnimalHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA63D72C2781C43B001ED17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA63D7352781C43C001ED17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,6 +200,7 @@
 		FA3071A4278A06240021B006 /* AnimalDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FA62DCD0278DB6A10096B523 /* View */,
 				FA3071A5278A08050021B006 /* ViewController */,
 			);
 			path = AnimalDetail;
@@ -204,6 +213,33 @@
 				FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FA62DCD0278DB6A10096B523 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA62DCD7278DBCD40096B523 /* Cell */,
+				FA62DCD1278DB6EA0096B523 /* HeaderView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA62DCD1278DB6EA0096B523 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				FA62DCD3278DB7290096B523 /* AnimalDetailHeaderView.swift */,
+				FA62DCD5278DB7B00096B523 /* AnimalDetailHeaderView.xib */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
+		FA62DCD7278DBCD40096B523 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA62DCD8278DBCF10096B523 /* AnimalDetailTableViewCell.swift */,
+				FA62DCD9278DBCF10096B523 /* AnimalDetailTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FA63D7202781C43B001ED17C = {
@@ -339,10 +375,10 @@
 		FAF4B4062786E7A7008C4D3A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FAF4B4162786F306008C4D3A /* Date */,
 				FAF4B4282786F903008C4D3A /* Encodable */,
 				FAF4B4252786F8CC008C4D3A /* String */,
 				FAF4B4172786F31B008C4D3A /* Number */,
-				FAF4B4162786F306008C4D3A /* Date */,
 				FAF4B4152786F2F9008C4D3A /* View */,
 			);
 			path = Extension;
@@ -548,10 +584,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */,
+				FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */,
 				FA30719F2789DD250021B006 /* AnimalHeaderView.xib in Resources */,
 				FA30719A2789DC420021B006 /* AnimalTableViewCell.xib in Resources */,
 				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
+				FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */,
 				FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +724,7 @@
 				FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */,
 				FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */,
 				FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */,
+				FA62DCD4278DB7290096B523 /* AnimalDetailHeaderView.swift in Sources */,
 				FA30719D2789DCC80021B006 /* AnimalHeaderView.swift in Sources */,
 				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
 				FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */,
@@ -701,6 +740,7 @@
 				FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */,
 				FA3071992789DC420021B006 /* AnimalTableViewCell.swift in Sources */,
 				FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */,
+				FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */,
 				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
 				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,

@@ -19,6 +19,7 @@ class AnimalViewController: UIViewController {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.separatorStyle = .none
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -38,7 +39,7 @@ class AnimalViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .gray
+        navigationItem.title = "主頁"
         register()
         setupUI()
         setupTableView()
@@ -99,14 +100,14 @@ extension AnimalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
         case 0:
-            return 30
+            return AnimalHeaderView.height
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160
+        return AnimalTableViewCell.height
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

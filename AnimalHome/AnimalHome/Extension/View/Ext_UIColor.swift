@@ -10,7 +10,7 @@ import UIKit
 extension UIColor {
     
     static var themeColor: UIColor {
-        return UIColor(red: 26.0/255.0, green: 35.0/255.0, blue: 43.0/255.0, alpha: 1.0)
+        return UIColor(red: 244.0/255.0, green: 164.0/255.0, blue: 96.0/255.0, alpha: 1.0)
     }
     
     static var themeTextColor: UIColor {

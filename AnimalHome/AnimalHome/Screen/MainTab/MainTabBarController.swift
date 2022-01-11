@@ -36,10 +36,11 @@ class MainTabBarController: UITabBarController {
         
         viewControllers = [na1, na2]
         
-        let tabOneBarItem1 = UITabBarItem(title: "主頁", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
-        let tabOneBarItem2 = UITabBarItem(title: "關於", image: UIImage(named: "defaultImage.png"), selectedImage: UIImage(named: "selectedImage.png"))
+        let tabOneBarItem1 = UITabBarItem(title: "主頁", image: UIImage(named: "mainTabIcon"), selectedImage: UIImage(named: "selectedImage.png"))
+        let tabOneBarItem2 = UITabBarItem(title: "關於", image: UIImage(named: "moreTabIcon"), selectedImage: UIImage(named: "selectedImage.png"))
         na1.tabBarItem = tabOneBarItem1
         na2.tabBarItem = tabOneBarItem2
+        na1.navigationBar.backItem?.title = "asd"
     }
     
     
