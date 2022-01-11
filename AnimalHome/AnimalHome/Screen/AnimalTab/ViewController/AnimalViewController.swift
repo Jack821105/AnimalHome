@@ -29,17 +29,25 @@ class AnimalViewController: UIViewController {
         return view
     }()
     
+    private lazy var leftBarView: AnimalLeftBarView = {
+        let view = AnimalLeftBarView.instantiate()
+        return view
+    }()
+    
+    
     private lazy var viewModel: AnimalViewModel = {
         let viewModel = AnimalViewModel()
         viewModel.delegate = self
         return viewModel
     }()
     
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "主頁"
+        navigationItem.title = "浪浪之家"
+        setupNavigation()
         register()
         setupUI()
         setupTableView()
@@ -47,6 +55,15 @@ class AnimalViewController: UIViewController {
     }
     
     // MARK: - SetupUI
+    
+    private func setupNavigation() {
+        leftBarView.translatesAutoresizingMaskIntoConstraints = false
+        leftBarView.snp.makeConstraints {
+            $0.width.greaterThanOrEqualTo(110)
+            $0.height.greaterThanOrEqualTo(30)
+        }
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarView)
+    }
     
     private func setupUI() {
         self.view.addSubview(tableView)
@@ -149,6 +166,8 @@ extension AnimalViewController: AnimalViewModelDelegate {
     func updateInfo() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            let infos = self.viewModel.getCurrntTypeInfos()
+            self.leftBarView.set(total: infos.count)
         }
     }
     
@@ -163,6 +182,8 @@ extension AnimalViewController: AnimalHeaderViewDelegate {
         DispatchQueue.main.async {
             self.viewModel.currentType = currentType
             self.tableView.reloadData()
+            let infos = self.viewModel.getCurrntTypeInfos()
+            self.leftBarView.set(total: infos.count)
         }
     }
     

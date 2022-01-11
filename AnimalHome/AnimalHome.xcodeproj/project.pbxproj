@@ -21,6 +21,8 @@
 		FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCD5278DB7B00096B523 /* AnimalDetailHeaderView.xib */; };
 		FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62DCD8278DBCF10096B523 /* AnimalDetailTableViewCell.swift */; };
 		FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCD9278DBCF10096B523 /* AnimalDetailTableViewCell.xib */; };
+		FA62DCDF278DE7F10096B523 /* AnimalLeftBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62DCDE278DE7F10096B523 /* AnimalLeftBarView.swift */; };
+		FA62DCE1278DE8010096B523 /* AnimalLeftBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCE0278DE8010096B523 /* AnimalLeftBarView.xib */; };
 		FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D72C2781C43B001ED17C /* AppDelegate.swift */; };
 		FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7352781C43C001ED17C /* Assets.xcassets */; };
 		FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7372781C43C001ED17C /* LaunchScreen.storyboard */; };
@@ -92,6 +94,8 @@
 		FA62DCD5278DB7B00096B523 /* AnimalDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailHeaderView.xib; sourceTree = "<group>"; };
 		FA62DCD8278DBCF10096B523 /* AnimalDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailTableViewCell.swift; sourceTree = "<group>"; };
 		FA62DCD9278DBCF10096B523 /* AnimalDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalDetailTableViewCell.xib; sourceTree = "<group>"; };
+		FA62DCDE278DE7F10096B523 /* AnimalLeftBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalLeftBarView.swift; sourceTree = "<group>"; };
+		FA62DCE0278DE8010096B523 /* AnimalLeftBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalLeftBarView.xib; sourceTree = "<group>"; };
 		FA63D7292781C43B001ED17C /* AnimalHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA63D72C2781C43B001ED17C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA63D7352781C43C001ED17C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +246,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		FA62DCDC278DE7A30096B523 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				FA62DCDD278DE7B50096B523 /* LeftBarView */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		FA62DCDD278DE7B50096B523 /* LeftBarView */ = {
+			isa = PBXGroup;
+			children = (
+				FA62DCDE278DE7F10096B523 /* AnimalLeftBarView.swift */,
+				FA62DCE0278DE8010096B523 /* AnimalLeftBarView.xib */,
+			);
+			path = LeftBarView;
+			sourceTree = "<group>";
+		};
 		FA63D7202781C43B001ED17C = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +351,7 @@
 		FA9ABD192781DA3D0097B473 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA62DCDC278DE7A30096B523 /* Navigation */,
 				FA30719B2789DCAA0021B006 /* HeaderView */,
 				FA9ABD1A2781DA440097B473 /* Cell */,
 			);
@@ -588,6 +610,7 @@
 				FA30719F2789DD250021B006 /* AnimalHeaderView.xib in Resources */,
 				FA30719A2789DC420021B006 /* AnimalTableViewCell.xib in Resources */,
 				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
+				FA62DCE1278DE8010096B523 /* AnimalLeftBarView.xib in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
 				FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */,
 				FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */,
@@ -749,6 +772,7 @@
 				FA3071A32789FB0C0021B006 /* Animal.swift in Sources */,
 				FAF4B4222786F6BA008C4D3A /* FileDataCacheBase.swift in Sources */,
 				FAF4B4272786F8D3008C4D3A /* StringExtensions.swift in Sources */,
+				FA62DCDF278DE7F10096B523 /* AnimalLeftBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
