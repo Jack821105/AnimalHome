@@ -24,22 +24,31 @@ class AnimalViewController: UIViewController {
         return view
     }()
     
-    private lazy var headerView: AnimalHeaderView = {
-        let view = AnimalHeaderView.instantiate()
-        view.delegate = self
-        return view
-    }()
-    
     private lazy var leftBarView: AnimalLeftBarView = {
         let view = AnimalLeftBarView.instantiate()
         return view
     }()
     
-    
     private lazy var viewModel: AnimalViewModel = {
         let viewModel = AnimalViewModel()
         viewModel.delegate = self
         return viewModel
+    }()
+    
+    
+    private lazy var collectionView: UICollectionView = {
+        
+        return UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+    }()
+    
+    
+    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.scrollDirection = .vertical
+        layout.sectionFootersPinToVisibleBounds = false
+        return layout
     }()
     
     
@@ -51,14 +60,9 @@ class AnimalViewController: UIViewController {
         setupNavigation()
         register()
         setupUI()
-        setupTableView()
+        setupCollectionView()
         viewModel.featchAPI()
         
-        let remoteConfig = RemoteConfig.remoteConfig()
-        let str = remoteConfig["Test"].stringValue
-        print("JACK Dev \(str)")
-        
-         
     }
     
     // MARK: - SetupUI
@@ -73,22 +77,30 @@ class AnimalViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.view.addSubview(tableView)
-        tableView.snp.makeConstraints {
-            $0.left.top.right.bottom.equalTo(self.view).offset(0)
+        self.view.addSubview(collectionView)
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.collectionView.snp.makeConstraints { make in
+            make.left.top.right.bottom.equalTo(self.view).offset(0)
         }
+        
+        
     }
     
     // MARK: - Func
     
-    private func setupTableView() {
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+    private func setupCollectionView() {
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
     }
     
     private func register() {
-        let nib = UINib(nibName: AnimalTableViewCell.nibName, bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: AnimalTableViewCell.nibName)
+        
+        let nib = UINib(nibName: AnimalCollectionViewCell.nibName, bundle: nil)
+        self.collectionView.register(nib, forCellWithReuseIdentifier: AnimalCollectionViewCell.nibName)
+        
+        let nib2 = UINib(nibName: AnimalCollectionReusableView.nibName, bundle: nil)
+        self.collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AnimalCollectionReusableView.nibName)
+        
     }
     
     
@@ -108,54 +120,75 @@ extension AnimalViewController {
 }
 
 
-// MARK: - UITableViewDelegate
 
-extension AnimalViewController: UITableViewDelegate {
+
+// MARK: - AnimalViewModelDelegate
+
+extension AnimalViewController: AnimalViewModelDelegate {
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case 0:
-            return headerView
-        default:
-            return nil
+    func updateInfo() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            let infos = self.viewModel.getCurrntTypeInfos()
+            self.leftBarView.set(total: infos.count)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return AnimalHeaderView.height
-        default:
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return AnimalTableViewCell.height
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let infos = viewModel.getCurrntTypeInfos()
-        let info = infos[indexPath.row]
-        let vc = AnimalDetailViewController.instantiate()
-        vc.setInfo(info: info)
-        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UICollectionViewDelegate
 
-extension AnimalViewController: UITableViewDataSource {
+extension AnimalViewController: UICollectionViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+    /// Header
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return section == 0 ? CGSize(width: collectionView.frame.width, height: 50) : .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+     
+        if kind == UICollectionView.elementKindSectionHeader,
+           let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AnimalCollectionReusableView.nibName, for: indexPath) as? AnimalCollectionReusableView {
+            headerView.delegate = self
+            return headerView
+        }
+        
+        return UICollectionReusableView()
+        
+    }
+    
+}
+
+extension AnimalViewController: UICollectionViewDelegateFlowLayout {
+    
+    /// collectionView單元格尺寸
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //控制cell
+        let itemSpace: CGFloat = 0
+        let columnCount: CGFloat = 2
+        let width = floor((collectionView.bounds.width  - itemSpace * (columnCount)) / columnCount)
+        return .init(width: width, height: width)
+    }
+    
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension AnimalViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let infos = viewModel.getCurrntTypeInfos()
         return infos.isEmpty ? 0 : infos.count
     }
     
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AnimalTableViewCell.nibName, for: indexPath) as! AnimalTableViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionViewCell.nibName, for: indexPath) as! AnimalCollectionViewCell
         let infos = viewModel.getCurrntTypeInfos()
         let info = infos[indexPath.row]
         cell.set(info: info)
@@ -166,33 +199,17 @@ extension AnimalViewController: UITableViewDataSource {
 }
 
 
-// MARK: - AnimalViewModelDelegate
+// MARK: - AnimalCollectionReusableViewDelegate
 
-extension AnimalViewController: AnimalViewModelDelegate {
+extension AnimalViewController: AnimalCollectionReusableViewDelegate {
     
-    func updateInfo() {
+    func didTapAnimalType(animalType: AnimalType) {
         DispatchQueue.main.async {
-            self.tableView.reloadData()
-            let infos = self.viewModel.getCurrntTypeInfos()
-            self.leftBarView.set(total: infos.count)
+            self.viewModel.currentType = animalType
+            self.leftBarView.set(total: self.viewModel.getCurrntTypeInfos().count)
+            self.collectionView.reloadData()
         }
     }
     
-}
-
-
-// MARK: - AnimalHeaderViewDelegate
-
-extension AnimalViewController: AnimalHeaderViewDelegate {
-    
-    func didClickHeaderButton(currentType: AnimalType) {
-        DispatchQueue.main.async {
-            self.viewModel.currentType = currentType
-            self.tableView.reloadData()
-            let infos = self.viewModel.getCurrntTypeInfos()
-            self.leftBarView.set(total: infos.count)
-        }
-    }
     
 }
-
