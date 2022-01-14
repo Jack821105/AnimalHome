@@ -14,6 +14,10 @@
 		FA245B442791C7580053BFF5 /* AnimalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA245B422791C7580053BFF5 /* AnimalCollectionViewCell.xib */; };
 		FA245B472791CC380053BFF5 /* AnimalCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA245B452791CC380053BFF5 /* AnimalCollectionReusableView.swift */; };
 		FA245B482791CC380053BFF5 /* AnimalCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA245B462791CC380053BFF5 /* AnimalCollectionReusableView.xib */; };
+		FA245B4B2791D63A0053BFF5 /* ChangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA245B4A2791D63A0053BFF5 /* ChangeButton.swift */; };
+		FA245B4D2791D8BD0053BFF5 /* ChangeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA245B4C2791D8BD0053BFF5 /* ChangeButton.xib */; };
+		FA245B512791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */; };
+		FA245B522791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */; };
 		FA3071A32789FB0C0021B006 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A22789FB0C0021B006 /* Animal.swift */; };
 		FA3071A7278A08220021B006 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A6278A08220021B006 /* AnimalDetailViewController.swift */; };
 		FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */; };
@@ -89,6 +93,10 @@
 		FA245B422791C7580053BFF5 /* AnimalCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA245B452791CC380053BFF5 /* AnimalCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCollectionReusableView.swift; sourceTree = "<group>"; };
 		FA245B462791CC380053BFF5 /* AnimalCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCollectionReusableView.xib; sourceTree = "<group>"; };
+		FA245B4A2791D63A0053BFF5 /* ChangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeButton.swift; sourceTree = "<group>"; };
+		FA245B4C2791D8BD0053BFF5 /* ChangeButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeButton.xib; sourceTree = "<group>"; };
+		FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalListCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA3071A22789FB0C0021B006 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		FA3071A6278A08220021B006 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -186,6 +194,33 @@
 				2196049977F7CA46CC878C7D /* Pods-AnimalHomeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FA245B492791D6210053BFF5 /* ChageButton */ = {
+			isa = PBXGroup;
+			children = (
+				FA245B4A2791D63A0053BFF5 /* ChangeButton.swift */,
+				FA245B4C2791D8BD0053BFF5 /* ChangeButton.xib */,
+			);
+			path = ChageButton;
+			sourceTree = "<group>";
+		};
+		FA245B4E2791DF840053BFF5 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */,
+				FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		FA245B532791DFB30053BFF5 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				FA245B412791C7580053BFF5 /* AnimalCollectionViewCell.swift */,
+				FA245B422791C7580053BFF5 /* AnimalCollectionViewCell.xib */,
+			);
+			path = Photo;
 			sourceTree = "<group>";
 		};
 		FA30719B2789DCAA0021B006 /* HeaderView */ = {
@@ -365,6 +400,7 @@
 		FA9ABD192781DA3D0097B473 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA245B492791D6210053BFF5 /* ChageButton */,
 				FA62DCDC278DE7A30096B523 /* Navigation */,
 				FA30719B2789DCAA0021B006 /* HeaderView */,
 				FA9ABD1A2781DA440097B473 /* Cell */,
@@ -375,8 +411,8 @@
 		FA9ABD1A2781DA440097B473 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FA245B412791C7580053BFF5 /* AnimalCollectionViewCell.swift */,
-				FA245B422791C7580053BFF5 /* AnimalCollectionViewCell.xib */,
+				FA245B532791DFB30053BFF5 /* Photo */,
+				FA245B4E2791DF840053BFF5 /* List */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -619,9 +655,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA245B522791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib in Resources */,
 				FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */,
 				FA245B482791CC380053BFF5 /* AnimalCollectionReusableView.xib in Resources */,
 				FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */,
+				FA245B4D2791D8BD0053BFF5 /* ChangeButton.xib in Resources */,
 				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
 				FA62DCE1278DE8010096B523 /* AnimalLeftBarView.xib in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
@@ -782,9 +820,11 @@
 				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
 				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,
+				FA245B512791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift in Sources */,
 				FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */,
 				FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */,
 				FA245B472791CC380053BFF5 /* AnimalCollectionReusableView.swift in Sources */,
+				FA245B4B2791D63A0053BFF5 /* ChangeButton.swift in Sources */,
 				FA3071A32789FB0C0021B006 /* Animal.swift in Sources */,
 				FAF4B4222786F6BA008C4D3A /* FileDataCacheBase.swift in Sources */,
 				FAF4B4272786F8D3008C4D3A /* StringExtensions.swift in Sources */,

@@ -22,7 +22,9 @@ class AnimalViewModel {
     
     private var catInfos: [Animal] = []
     
-    var currentType: AnimalViewController.AnimalType = .dog
+    var currentAnimalType: AnimalViewController.AnimalType = .dog
+    
+    var currentCellType: AnimalViewController.CellPage = .photo
     
     weak var delegate: AnimalViewModelDelegate?
     
@@ -50,7 +52,7 @@ class AnimalViewModel {
     
     func getCurrntTypeInfos() -> [Animal] {
         
-        switch currentType {
+        switch currentAnimalType {
             case .dog:
                 return dogInfos
             case .cat:

@@ -16,6 +16,7 @@ extension AnimalViewController: StoryboardInstantiable {}
 /// 動物主頁
 class AnimalViewController: UIViewController {
     
+    
     private lazy var tableView: UITableView = {
         let view = UITableView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,15 +30,14 @@ class AnimalViewController: UIViewController {
         return view
     }()
     
-    private lazy var viewModel: AnimalViewModel = {
-        let viewModel = AnimalViewModel()
-        viewModel.delegate = self
-        return viewModel
+    private lazy var changeCellButton: ChangeButton = {
+        let view = ChangeButton.instantiate()
+        view.delegate = self
+        return view
     }()
     
     
     private lazy var collectionView: UICollectionView = {
-        
         return UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
     }()
     
@@ -49,6 +49,12 @@ class AnimalViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.sectionHeadersPinToVisibleBounds = true
         return layout
+    }()
+    
+    private lazy var viewModel: AnimalViewModel = {
+        let viewModel = AnimalViewModel()
+        viewModel.delegate = self
+        return viewModel
     }()
     
     
@@ -84,6 +90,16 @@ class AnimalViewController: UIViewController {
         }
         
         
+        self.view.addSubview(changeCellButton)
+        self.changeCellButton.translatesAutoresizingMaskIntoConstraints = false
+//        self.changeCellButton.layer.cornerRadius = 50
+        self.changeCellButton.snp.makeConstraints { make in
+            make.width.height.greaterThanOrEqualTo(50)
+            make.right.equalTo(self.view.snp.right).offset(0)
+            make.bottom.equalTo(self.view.snp_bottomMargin).offset(0)
+            
+        }
+        
     }
     
     // MARK: - Func
@@ -101,6 +117,8 @@ class AnimalViewController: UIViewController {
         let nib2 = UINib(nibName: AnimalCollectionReusableView.nibName, bundle: nil)
         self.collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AnimalCollectionReusableView.nibName)
         
+        let nib3 = UINib(nibName: AnimalListCollectionViewCell.nibName, bundle: nil)
+        self.collectionView.register(nib3, forCellWithReuseIdentifier: AnimalListCollectionViewCell.nibName)
     }
     
     
@@ -115,6 +133,16 @@ extension AnimalViewController {
         case dog
         
         case cat
+    }
+    
+    enum CellPage {
+        
+        /// 清單
+        case list
+        
+        /// 照片
+        case photo
+        
     }
     
 }
@@ -151,7 +179,7 @@ extension AnimalViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-     
+        
         if kind == UICollectionView.elementKindSectionHeader,
            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AnimalCollectionReusableView.nibName, for: indexPath) as? AnimalCollectionReusableView {
             headerView.delegate = self
@@ -164,15 +192,24 @@ extension AnimalViewController: UICollectionViewDelegate {
     
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension AnimalViewController: UICollectionViewDelegateFlowLayout {
     
     /// collectionView單元格尺寸
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         //控制cell
-        let itemSpace: CGFloat = 0
-        let columnCount: CGFloat = 2
-        let width = floor((collectionView.bounds.width  - itemSpace * (columnCount)) / columnCount)
-        return .init(width: width, height: width)
+        switch viewModel.currentCellType {
+            case .photo:
+                let itemSpace: CGFloat = 0
+                let columnCount: CGFloat = 2
+                let width = floor((collectionView.bounds.width  - itemSpace * (columnCount)) / columnCount)
+                return .init(width: width, height: width)
+            case .list:
+                return .init(width: collectionView.bounds.width, height: 120)
+        }
+        
     }
     
 }
@@ -188,11 +225,24 @@ extension AnimalViewController: UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionViewCell.nibName, for: indexPath) as! AnimalCollectionViewCell
         let infos = viewModel.getCurrntTypeInfos()
         let info = infos[indexPath.row]
-        cell.set(info: info)
-        return cell
+        
+        switch viewModel.currentCellType {
+        case .photo:
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionViewCell.nibName, for: indexPath) as! AnimalCollectionViewCell
+            
+            cell.set(info: info)
+            return cell
+            
+        case .list:
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalListCollectionViewCell.nibName, for: indexPath) as! AnimalListCollectionViewCell
+            cell.set(info: info)
+            
+            return cell
+        }
     }
     
     
@@ -205,11 +255,22 @@ extension AnimalViewController: AnimalCollectionReusableViewDelegate {
     
     func didTapAnimalType(animalType: AnimalType) {
         DispatchQueue.main.async {
-            self.viewModel.currentType = animalType
+            self.viewModel.currentAnimalType = animalType
             self.leftBarView.set(total: self.viewModel.getCurrntTypeInfos().count)
             self.collectionView.reloadData()
         }
     }
     
     
+}
+
+
+extension AnimalViewController: ChangeButtonDelegate {
+    func didChageCollectionViewCellType(cellType: CellPage) {
+        DispatchQueue.main.async {
+            self.viewModel.currentCellType = cellType
+            let named: String = cellType == .photo ? "icon_float_list" : "icon_float_field"
+            self.collectionView.reloadData()
+        }
+    }
 }
