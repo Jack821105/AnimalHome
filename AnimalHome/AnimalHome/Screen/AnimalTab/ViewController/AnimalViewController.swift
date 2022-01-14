@@ -47,7 +47,7 @@ class AnimalViewController: UIViewController {
         layout.minimumInteritemSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .vertical
-        layout.sectionFootersPinToVisibleBounds = false
+        layout.sectionHeadersPinToVisibleBounds = true
         return layout
     }()
     
