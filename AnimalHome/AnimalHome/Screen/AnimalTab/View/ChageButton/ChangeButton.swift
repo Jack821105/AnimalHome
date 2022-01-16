@@ -9,7 +9,7 @@ import UIKit
 
 protocol ChangeButtonDelegate: AnyObject {
     
-    func didChageCollectionViewCellType(cellType: AnimalViewController.CellPage)
+    func didChageCollectionViewCellType(cellType: AnimalViewController.CellType)
     
 }
 
@@ -31,15 +31,13 @@ class ChangeButton: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-    
-        
-        
     }
     
     
     @IBAction func didChage(_ sender: UIButton) {
         
-        var cellType: AnimalViewController.CellPage
+        var cellType: AnimalViewController.CellType
+        sender.tintColor = .clear
         if !sender.isSelected {
             sender.isSelected = true
             self.cellTypeImageView.image = UIImage(named: "icon_float_field")
@@ -48,6 +46,7 @@ class ChangeButton: UIView {
             cellTypeImageView.image = UIImage(named: "icon_float_list")
             cellType = .photo
             sender.isSelected = false
+            
         }
         delegate?.didChageCollectionViewCellType(cellType: cellType)
     }

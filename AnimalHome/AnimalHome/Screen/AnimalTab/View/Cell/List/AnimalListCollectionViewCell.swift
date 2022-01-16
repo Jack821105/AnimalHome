@@ -17,9 +17,15 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var animalImageView: UIImageView!
     
+    @IBOutlet weak var genderImageView: UIImageView!
+    
+    @IBOutlet weak var bacterinImageView: UIImageView!
+    
+    @IBOutlet weak var sterilizationImagView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.animalImageView.layer.cornerRadius = 4
     }
     
     func set(info: Animal) {
@@ -28,6 +34,41 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
                 self.animalImageView.image = UIImage(named: "cat-animal")
             }
         }
+        
+        if let gender = info.sex {
+            var imageName: String
+            switch gender {
+            case .f:
+                imageName = "gender_F"
+            case .m:
+                imageName = "gender_M"
+            case .nono:
+                imageName = "gender_None"
+            }
+            self.genderImageView.image = UIImage(named: imageName)
+        }
+        
+        if let bacterin = info.bacterin {
+            var imageName: String
+            if bacterin == "T" {
+                imageName = "graphicRoundCheck"
+            } else {
+                imageName = "img_slider_normal"
+            }
+            self.bacterinImageView.image = UIImage(named: imageName)
+        }
+        
+        if let sterilization = info.sterilization {
+            var imageName: String
+            if sterilization == "T" {
+                imageName = "graphicRoundCheck"
+            } else {
+                imageName = "img_slider_normal"
+            }
+            self.sterilizationImagView.image = UIImage(named: imageName)
+        }
+        
+        
     }
 
 }

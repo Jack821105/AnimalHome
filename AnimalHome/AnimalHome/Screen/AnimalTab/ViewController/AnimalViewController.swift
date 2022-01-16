@@ -32,6 +32,7 @@ class AnimalViewController: UIViewController {
     
     private lazy var changeCellButton: ChangeButton = {
         let view = ChangeButton.instantiate()
+        view.layer.cornerRadius = 25
         view.delegate = self
         return view
     }()
@@ -92,11 +93,10 @@ class AnimalViewController: UIViewController {
         
         self.view.addSubview(changeCellButton)
         self.changeCellButton.translatesAutoresizingMaskIntoConstraints = false
-//        self.changeCellButton.layer.cornerRadius = 50
         self.changeCellButton.snp.makeConstraints { make in
             make.width.height.greaterThanOrEqualTo(50)
             make.right.equalTo(self.view.snp.right).offset(0)
-            make.bottom.equalTo(self.view.snp_bottomMargin).offset(0)
+            make.bottom.equalTo(self.view.snp_bottomMargin).offset(-15)
             
         }
         
@@ -135,7 +135,7 @@ extension AnimalViewController {
         case cat
     }
     
-    enum CellPage {
+    enum CellType {
         
         /// 清單
         case list
@@ -203,7 +203,7 @@ extension AnimalViewController: UICollectionViewDelegateFlowLayout {
         switch viewModel.currentCellType {
             case .photo:
                 let itemSpace: CGFloat = 0
-                let columnCount: CGFloat = 2
+                let columnCount: CGFloat = 4
                 let width = floor((collectionView.bounds.width  - itemSpace * (columnCount)) / columnCount)
                 return .init(width: width, height: width)
             case .list:
@@ -264,12 +264,13 @@ extension AnimalViewController: AnimalCollectionReusableViewDelegate {
     
 }
 
+// MARK: - ChangeButtonDelegate
 
 extension AnimalViewController: ChangeButtonDelegate {
-    func didChageCollectionViewCellType(cellType: CellPage) {
+    
+    func didChageCollectionViewCellType(cellType: CellType) {
         DispatchQueue.main.async {
             self.viewModel.currentCellType = cellType
-            let named: String = cellType == .photo ? "icon_float_list" : "icon_float_field"
             self.collectionView.reloadData()
         }
     }

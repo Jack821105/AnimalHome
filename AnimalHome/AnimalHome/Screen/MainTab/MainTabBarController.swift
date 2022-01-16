@@ -14,7 +14,6 @@ class MainTabBarController: UITabBarController {
         return vc
     }()
         
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .themeColor
@@ -31,12 +30,15 @@ class MainTabBarController: UITabBarController {
     
     private func setupViewController() {
         let na1 = UINavigationController(rootViewController: AnimalVC)
+
         
         viewControllers = [na1]
         
         let tabOneBarItem1 = UITabBarItem(title: "主頁", image: UIImage(named: "mainTabIcon"), selectedImage: UIImage(named: "selectedImage.png"))
+   
         na1.tabBarItem = tabOneBarItem1
-
+ 
+        
 
     }
     

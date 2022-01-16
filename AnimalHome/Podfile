@@ -24,13 +24,7 @@ def google_pod_install
 
 end
 
-
-
-target 'AnimalHome' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for AnimalHome
+def animal_pod_install
 
     # 網路協定
     pod 'Alamofire', '~> 5.5'
@@ -44,6 +38,17 @@ target 'AnimalHome' do
     # make Auto Layout easy
     pod 'SnapKit', '~> 5.0.0'
 
+end  
+
+
+
+target 'AnimalHome' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AnimalHome
+
+    animal_pod_install
     google_pod_install
 
   target 'AnimalHomeTests' do

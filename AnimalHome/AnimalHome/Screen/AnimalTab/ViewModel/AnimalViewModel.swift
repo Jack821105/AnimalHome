@@ -24,7 +24,7 @@ class AnimalViewModel {
     
     var currentAnimalType: AnimalViewController.AnimalType = .dog
     
-    var currentCellType: AnimalViewController.CellPage = .photo
+    var currentCellType: AnimalViewController.CellType = .photo
     
     weak var delegate: AnimalViewModelDelegate?
     
