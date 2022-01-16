@@ -16,15 +16,6 @@ extension AnimalViewController: StoryboardInstantiable {}
 /// 動物主頁
 class AnimalViewController: UIViewController {
     
-    
-    private lazy var tableView: UITableView = {
-        let view = UITableView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.separatorStyle = .none
-        view.backgroundColor = .clear
-        return view
-    }()
-    
     private lazy var leftBarView: AnimalLeftBarView = {
         let view = AnimalLeftBarView.instantiate()
         return view
@@ -39,14 +30,16 @@ class AnimalViewController: UIViewController {
     
     
     private lazy var collectionView: UICollectionView = {
-        return UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
+        view.backgroundColor = .themeColor
+        return view
     }()
     
     
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         layout.scrollDirection = .vertical
         layout.sectionHeadersPinToVisibleBounds = true
         return layout
@@ -188,6 +181,14 @@ extension AnimalViewController: UICollectionViewDelegate {
         
         return UICollectionReusableView()
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let infos = self.viewModel.getCurrntTypeInfos()
+        let info = infos[indexPath.row]
+        let vc = AnimalDetailViewController.instantiate()
+        vc.setInfo(info: info)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }
