@@ -42,6 +42,7 @@
 		FAA9B423278759B40066F26E /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B422278759B40066F26E /* AnimalViewModel.swift */; };
 		FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */; };
 		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
+		FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF04089279C1F3900025046 /* MyFavoriteManager.swift */; };
 		FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */; };
 		FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4092786E819008C4D3A /* NibInstantiable.swift */; };
 		FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */; };
@@ -125,6 +126,7 @@
 		FAA9B422278759B40066F26E /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FAF04089279C1F3900025046 /* MyFavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteManager.swift; sourceTree = "<group>"; };
 		FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		FAF4B4092786E819008C4D3A /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
 		FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewInstantiable.swift; sourceTree = "<group>"; };
@@ -335,10 +337,9 @@
 		FA63D72B2781C43B001ED17C /* AnimalHome */ = {
 			isa = PBXGroup;
 			children = (
+				FAF04087279C1EF300025046 /* Manager */,
 				FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */,
 				FA62DCE6278DF9AB0096B523 /* Models */,
-				FAF4B43727871F76008C4D3A /* DomainManager */,
-				FAF4B42F2786FDC3008C4D3A /* APIManager */,
 				FAF4B41B2786F40E008C4D3A /* Tool */,
 				FAF4B4182786F3AA008C4D3A /* Cache */,
 				FAF4B4062786E7A7008C4D3A /* Extension */,
@@ -442,6 +443,24 @@
 				FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		FAF04087279C1EF300025046 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FAF04088279C1F0000025046 /* MyFavoriteManager */,
+				FAF4B43727871F76008C4D3A /* DomainManager */,
+				FAF4B42F2786FDC3008C4D3A /* APIManager */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FAF04088279C1F0000025046 /* MyFavoriteManager */ = {
+			isa = PBXGroup;
+			children = (
+				FAF04089279C1F3900025046 /* MyFavoriteManager.swift */,
+			);
+			path = MyFavoriteManager;
 			sourceTree = "<group>";
 		};
 		FAF4B4062786E7A7008C4D3A /* Extension */ = {
@@ -817,6 +836,7 @@
 				FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */,
 				FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */,
 				FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */,
+				FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */,
 				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
 				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,

@@ -115,7 +115,7 @@ extension AnimalDetailViewController: UITableViewDataSource {
     private func getTitle(index: Int) -> String? {
         switch index {
         case 0:
-            return "年紀"
+            return "晶片"
         case 1:
             return "性別"
         case 2:
@@ -144,7 +144,11 @@ extension AnimalDetailViewController: UITableViewDataSource {
     private func getDetail(index: Int) -> String? {
         switch index {
         case 0:
-            return info?.age
+            if let id = info?.id {
+                return String("\(id)")
+            } else {
+                return "-"
+            }
         case 1:
             return info?.sex?.getTitle()
         case 2:

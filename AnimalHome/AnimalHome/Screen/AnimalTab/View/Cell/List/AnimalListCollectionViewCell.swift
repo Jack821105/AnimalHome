@@ -9,6 +9,15 @@ import UIKit
 import SDWebImage
 
 
+// MARK: - Protocol
+
+protocol AnimalListCollectionViewCellDelegate: AnyObject {
+    
+    func addMyFavorite(info: Animal)
+    
+}
+
+
 // MARK: - NibInstantiable
 
 extension AnimalListCollectionViewCell: NibInstantiable {}
@@ -23,12 +32,17 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var sterilizationImagView: UIImageView!
     
+    weak var delegate: AnimalListCollectionViewCellDelegate?
+    
+    private var info: Animal?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.animalImageView.layer.cornerRadius = 4
     }
     
     func set(info: Animal) {
+        self.info = info
         animalImageView.sd_setImage(with: URL(string: info.urlImage!)) { _, error, _, _ in
             if let _ = error {
                 self.animalImageView.image = UIImage(named: "cat-animal")
@@ -67,8 +81,11 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
             }
             self.sterilizationImagView.image = UIImage(named: imageName)
         }
-        
-        
     }
-
+    @IBAction func didAddMyFavorite(_ sender: Any) {
+        if let info = self.info {
+            delegate?.addMyFavorite(info: info)
+        }
+    }
+    
 }

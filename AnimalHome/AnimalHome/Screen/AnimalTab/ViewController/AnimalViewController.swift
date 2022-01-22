@@ -240,6 +240,7 @@ extension AnimalViewController: UICollectionViewDataSource {
         case .list:
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalListCollectionViewCell.nibName, for: indexPath) as! AnimalListCollectionViewCell
+            cell.delegate = self
             cell.set(info: info)
             
             return cell
@@ -275,4 +276,16 @@ extension AnimalViewController: ChangeButtonDelegate {
             self.collectionView.reloadData()
         }
     }
+}
+
+// MARK: - AnimalListCollectionViewCellDelegate
+
+extension AnimalViewController: AnimalListCollectionViewCellDelegate {
+    
+    func addMyFavorite(info: Animal) {
+        var infos = MyFavoriteManager.shared.readData()
+        infos.append(info)
+        MyFavoriteManager.shared.writeData(saveDate: infos)
+    }
+    
 }
