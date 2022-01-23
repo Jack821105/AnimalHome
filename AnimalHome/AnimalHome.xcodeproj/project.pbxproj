@@ -43,6 +43,11 @@
 		FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */; };
 		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
 		FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF04089279C1F3900025046 /* MyFavoriteManager.swift */; };
+		FAF0409D279D31E400025046 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */; };
+		FAF0409F279D31EA00025046 /* MyFavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */; };
+		FAF040A8279D353400025046 /* MyFavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF040A7279D353400025046 /* MyFavoriteViewModel.swift */; };
+		FAF040AB279D369E00025046 /* MyFavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF040A9279D369E00025046 /* MyFavoriteTableViewCell.swift */; };
+		FAF040AC279D369E00025046 /* MyFavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAF040AA279D369E00025046 /* MyFavoriteTableViewCell.xib */; };
 		FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */; };
 		FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4092786E819008C4D3A /* NibInstantiable.swift */; };
 		FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */; };
@@ -127,6 +132,11 @@
 		FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		FAF04089279C1F3900025046 /* MyFavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteManager.swift; sourceTree = "<group>"; };
+		FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
+		FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavoriteViewController.storyboard; sourceTree = "<group>"; };
+		FAF040A7279D353400025046 /* MyFavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewModel.swift; sourceTree = "<group>"; };
+		FAF040A9279D369E00025046 /* MyFavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		FAF040AA279D369E00025046 /* MyFavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyFavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		FAF4B4072786E7BB008C4D3A /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		FAF4B4092786E819008C4D3A /* NibInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibInstantiable.swift; sourceTree = "<group>"; };
 		FAF4B40B2786F0E4008C4D3A /* UIViewInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewInstantiable.swift; sourceTree = "<group>"; };
@@ -431,8 +441,9 @@
 			children = (
 				FA3071A4278A06240021B006 /* AnimalDetail */,
 				FA9ABD152781D7F60097B473 /* AnimalTab */,
-				FA9ABD112781D2640097B473 /* MainTab */,
 				FADBC2AC2781CA9C00B9A26B /* Loading */,
+				FA9ABD112781D2640097B473 /* MainTab */,
+				FAF0409A279D31BC00025046 /* MyFavoriteTab */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -461,6 +472,50 @@
 				FAF04089279C1F3900025046 /* MyFavoriteManager.swift */,
 			);
 			path = MyFavoriteManager;
+			sourceTree = "<group>";
+		};
+		FAF0409A279D31BC00025046 /* MyFavoriteTab */ = {
+			isa = PBXGroup;
+			children = (
+				FAF040A6279D351F00025046 /* ViewModel */,
+				FAF040A0279D335100025046 /* View */,
+				FAF0409B279D31D300025046 /* ViewController */,
+			);
+			path = MyFavoriteTab;
+			sourceTree = "<group>";
+		};
+		FAF0409B279D31D300025046 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */,
+				FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FAF040A0279D335100025046 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF040A1279D336000025046 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAF040A1279D336000025046 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAF040A9279D369E00025046 /* MyFavoriteTableViewCell.swift */,
+				FAF040AA279D369E00025046 /* MyFavoriteTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FAF040A6279D351F00025046 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAF040A7279D353400025046 /* MyFavoriteViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FAF4B4062786E7A7008C4D3A /* Extension */ = {
@@ -679,9 +734,11 @@
 				FA245B482791CC380053BFF5 /* AnimalCollectionReusableView.xib in Resources */,
 				FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */,
 				FA245B4D2791D8BD0053BFF5 /* ChangeButton.xib in Resources */,
+				FAF0409F279D31EA00025046 /* MyFavoriteViewController.storyboard in Resources */,
 				FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */,
 				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
 				FA62DCE1278DE8010096B523 /* AnimalLeftBarView.xib in Resources */,
+				FAF040AC279D369E00025046 /* MyFavoriteTableViewCell.xib in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
 				FA245B442791C7580053BFF5 /* AnimalCollectionViewCell.xib in Resources */,
 				FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */,
@@ -816,6 +873,7 @@
 				FAF4B4102786F1B3008C4D3A /* TimeZoneExtension.swift in Sources */,
 				FA62DCE8278DF9B60096B523 /* ConfigModel.swift in Sources */,
 				FAF4B4202786F63C008C4D3A /* FileDataProviderBase.swift in Sources */,
+				FAF040AB279D369E00025046 /* MyFavoriteTableViewCell.swift in Sources */,
 				FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */,
 				FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */,
 				FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */,
@@ -837,6 +895,7 @@
 				FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */,
 				FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */,
 				FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */,
+				FAF0409D279D31E400025046 /* MyFavoriteViewController.swift in Sources */,
 				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
 				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,
@@ -844,6 +903,7 @@
 				FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */,
 				FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */,
 				FA245B472791CC380053BFF5 /* AnimalCollectionReusableView.swift in Sources */,
+				FAF040A8279D353400025046 /* MyFavoriteViewModel.swift in Sources */,
 				FA245B4B2791D63A0053BFF5 /* ChangeButton.swift in Sources */,
 				FA3071A32789FB0C0021B006 /* Animal.swift in Sources */,
 				FAF4B4222786F6BA008C4D3A /* FileDataCacheBase.swift in Sources */,
