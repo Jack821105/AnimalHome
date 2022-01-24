@@ -21,17 +21,9 @@ class AnimalViewController: UIViewController {
         return view
     }()
     
-    private lazy var changeCellButton: ChangeButton = {
-        let view = ChangeButton.instantiate()
-        view.layer.cornerRadius = 25
-        view.delegate = self
-        return view
-    }()
-    
-    
     private lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        view.backgroundColor = .themeColor
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -57,6 +49,7 @@ class AnimalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "浪浪之家"
+        self.view.backgroundColor = .black34Color
         setupNavigation()
         register()
         setupUI()
@@ -83,16 +76,6 @@ class AnimalViewController: UIViewController {
             make.left.top.right.bottom.equalTo(self.view).offset(0)
         }
         
-        
-        self.view.addSubview(changeCellButton)
-        self.changeCellButton.translatesAutoresizingMaskIntoConstraints = false
-        self.changeCellButton.snp.makeConstraints { make in
-            make.width.height.greaterThanOrEqualTo(50)
-            make.right.equalTo(self.view.snp.right).offset(0)
-            make.bottom.equalTo(self.view.snp_bottomMargin).offset(-15)
-            
-        }
-        
     }
     
     // MARK: - Func
@@ -103,9 +86,6 @@ class AnimalViewController: UIViewController {
     }
     
     private func register() {
-        
-        let nib = UINib(nibName: AnimalCollectionViewCell.nibName, bundle: nil)
-        self.collectionView.register(nib, forCellWithReuseIdentifier: AnimalCollectionViewCell.nibName)
         
         let nib2 = UINib(nibName: AnimalCollectionReusableView.nibName, bundle: nil)
         self.collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AnimalCollectionReusableView.nibName)
@@ -128,20 +108,7 @@ extension AnimalViewController {
         case cat
     }
     
-    enum CellType {
-        
-        /// 清單
-        case list
-        
-        /// 照片
-        case photo
-        
-    }
-    
 }
-
-
-
 
 // MARK: - AnimalViewModelDelegate
 
@@ -199,18 +166,7 @@ extension AnimalViewController: UICollectionViewDelegateFlowLayout {
     
     /// collectionView單元格尺寸
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        //控制cell
-        switch viewModel.currentCellType {
-            case .photo:
-                let itemSpace: CGFloat = 0
-                let columnCount: CGFloat = 4
-                let width = floor((collectionView.bounds.width  - itemSpace * (columnCount)) / columnCount)
-                return .init(width: width, height: width)
-            case .list:
-                return .init(width: collectionView.bounds.width, height: 120)
-        }
-        
+        return .init(width: collectionView.bounds.width, height: 120)
     }
     
 }
@@ -229,22 +185,12 @@ extension AnimalViewController: UICollectionViewDataSource {
         let infos = viewModel.getCurrntTypeInfos()
         let info = infos[indexPath.row]
         
-        switch viewModel.currentCellType {
-        case .photo:
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionViewCell.nibName, for: indexPath) as! AnimalCollectionViewCell
-            
-            cell.set(info: info)
-            return cell
-            
-        case .list:
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalListCollectionViewCell.nibName, for: indexPath) as! AnimalListCollectionViewCell
-            cell.delegate = self
-            cell.set(info: info)
-            
-            return cell
-        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalListCollectionViewCell.nibName, for: indexPath) as! AnimalListCollectionViewCell
+        cell.delegate = self
+        cell.set(info: info)
+        
+        return cell
     }
     
     
@@ -266,17 +212,6 @@ extension AnimalViewController: AnimalCollectionReusableViewDelegate {
     
 }
 
-// MARK: - ChangeButtonDelegate
-
-extension AnimalViewController: ChangeButtonDelegate {
-    
-    func didChageCollectionViewCellType(cellType: CellType) {
-        DispatchQueue.main.async {
-            self.viewModel.currentCellType = cellType
-            self.collectionView.reloadData()
-        }
-    }
-}
 
 // MARK: - AnimalListCollectionViewCellDelegate
 

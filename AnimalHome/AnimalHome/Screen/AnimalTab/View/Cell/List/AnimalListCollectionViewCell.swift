@@ -22,7 +22,10 @@ protocol AnimalListCollectionViewCellDelegate: AnyObject {
 
 extension AnimalListCollectionViewCell: NibInstantiable {}
 
+
 class AnimalListCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - IBOutlet
 
     @IBOutlet weak var animalImageView: UIImageView!
     
@@ -36,9 +39,10 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
     
     private var info: Animal?
     
+    // MARK: - Init
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.animalImageView.layer.cornerRadius = 4
     }
     
     func set(info: Animal) {
@@ -64,7 +68,7 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
         
         if let bacterin = info.bacterin {
             var imageName: String
-            if bacterin == "T" {
+            if bacterin.rawValue == "T" {
                 imageName = "graphicRoundCheck"
             } else {
                 imageName = "img_slider_normal"
@@ -74,7 +78,7 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
         
         if let sterilization = info.sterilization {
             var imageName: String
-            if sterilization == "T" {
+            if sterilization.rawValue == "T" {
                 imageName = "graphicRoundCheck"
             } else {
                 imageName = "img_slider_normal"
@@ -82,6 +86,9 @@ class AnimalListCollectionViewCell: UICollectionViewCell {
             self.sterilizationImagView.image = UIImage(named: imageName)
         }
     }
+    
+    // MARK: - IBAction
+    
     @IBAction func didAddMyFavorite(_ sender: Any) {
         if let info = self.info {
             delegate?.addMyFavorite(info: info)

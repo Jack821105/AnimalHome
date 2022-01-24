@@ -14,7 +14,7 @@ class AnimalCache: FileDataProviderBase<[Animal]> {
     private override init() {}
     
     override var config: FileDataCacheConfig {
-        .oneHour
+        .zero
     }
     
     override func updateCache(callback: @escaping ((FileDataProviderBase<[Animal]>.CacheData) -> Void), errorHandler: @escaping ((Error) -> Void)) {

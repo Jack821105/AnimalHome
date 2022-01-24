@@ -18,7 +18,7 @@ struct AnimalList: Codable {
 
 
 struct Animal: Codable {
-     
+    
     /// 身份辨識
     let id: Int
     
@@ -38,10 +38,10 @@ struct Animal: Codable {
     let colour: String?
     
     /// 施打狂犬病疫苗
-    let bacterin: String?
+    let bacterin: BacterinType?
     
     /// 是否絕育
-    let sterilization: String?
+    let sterilization: SterilizationType?
     
     /// 發現地
     let foundplace: String?
@@ -120,7 +120,38 @@ struct Animal: Codable {
                 return "未知"
             }
         }
+    }
+    
+    enum BacterinType: String, Codable {
         
+        case f = "F"
+        
+        case t = "T"
+        
+        func getTitle() -> String {
+            switch self {
+            case .f:
+                return "未施打狂犬病疫苗"
+            case .t:
+                return "已施打狂犬病疫苗"
+            }
+        }
+    }
+    
+    enum SterilizationType: String, Codable {
+        
+        case f = "F"
+        
+        case t = "T"
+        
+        func getTitle() -> String {
+            switch self {
+            case .f:
+                return "未絕育"
+            case .t:
+                return "已絕育"
+            }
+        }
     }
     
 }

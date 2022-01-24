@@ -156,9 +156,9 @@ extension AnimalDetailViewController: UITableViewDataSource {
         case 3:
             return info?.colour
         case 4:
-            return info?.bacterin
+            return info?.bacterin?.getTitle()
         case 5:
-            return info?.sterilization
+            return info?.sterilization?.getTitle()
         case 6:
             return info?.foundplace
         case 7:
