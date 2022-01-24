@@ -19,7 +19,8 @@ class MyFavoriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private lazy var viewModel: MyFavoriteViewModel = {
-        return MyFavoriteViewModel()
+        let model = MyFavoriteViewModel()
+        return model
     }()
     
     
@@ -28,8 +29,18 @@ class MyFavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "我的最愛"
+        self.view.backgroundColor = .black34Color
         register()
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // TOOD: - 處理viewmodle的生命週期
+        viewModel.getFileData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     private func register() {
@@ -38,14 +49,10 @@ class MyFavoriteViewController: UIViewController {
     }
     
     private func setupTableView() {
-        
         self.tableView.delegate = self
         self.tableView.dataSource = self
     }
     
-    
-
-
 }
 
 
@@ -53,7 +60,22 @@ class MyFavoriteViewController: UIViewController {
 
 extension MyFavoriteViewController: UITableViewDelegate {
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return MyFavoriteTableViewCell.height
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let infos = viewModel.getFileData()
+        let info = infos[indexPath.row]
+        let vc = AnimalDetailViewController.instantiate()
+        vc.setInfo(info: info)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
+
+// MARK: - UITableViewDataSource
 
 extension MyFavoriteViewController: UITableViewDataSource {
     
@@ -68,9 +90,7 @@ extension MyFavoriteViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyFavoriteTableViewCell.nibName, for: indexPath) as! MyFavoriteTableViewCell
         let infos = viewModel.getFileData()
         let info = infos[indexPath.row]
-        
-//        cell.set(info: info)
-        
+        cell.set(info: info)
         return cell
     }
     
