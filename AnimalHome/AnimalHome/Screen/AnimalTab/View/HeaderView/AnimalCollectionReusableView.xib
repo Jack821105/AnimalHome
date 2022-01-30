@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,18 +25,25 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jaY-hb-j6v">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="50"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="狗"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
                                             <connections>
                                                 <action selector="didTapDogButton:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="jFY-eB-h8f"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="dit-Mg-xl6">
+                                            <rect key="frame" x="0.0" y="5" width="160" height="40"/>
+                                        </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="jaY-hb-j6v" secondAttribute="trailing" id="37e-KQ-UTN"/>
+                                        <constraint firstItem="dit-Mg-xl6" firstAttribute="leading" secondItem="djI-L9-Wtp" secondAttribute="leading" id="72M-z7-rwU"/>
+                                        <constraint firstAttribute="trailing" secondItem="dit-Mg-xl6" secondAttribute="trailing" id="Man-sa-Cg8"/>
                                         <constraint firstItem="jaY-hb-j6v" firstAttribute="leading" secondItem="djI-L9-Wtp" secondAttribute="leading" id="OY7-ak-7qK"/>
                                         <constraint firstAttribute="bottom" secondItem="jaY-hb-j6v" secondAttribute="bottom" id="VVI-U3-nux"/>
                                         <constraint firstItem="jaY-hb-j6v" firstAttribute="top" secondItem="djI-L9-Wtp" secondAttribute="top" id="lTF-Jp-OTW"/>
+                                        <constraint firstItem="dit-Mg-xl6" firstAttribute="top" secondItem="djI-L9-Wtp" secondAttribute="top" constant="5" id="nsj-Jj-kEX"/>
+                                        <constraint firstAttribute="bottom" secondItem="dit-Mg-xl6" secondAttribute="bottom" constant="5" id="r7T-Ld-J1C"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUv-zr-6ex">
@@ -51,19 +57,27 @@
                                                 <action selector="didTapCatButton:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="nst-6M-nj6"/>
                                             </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="LFs-ys-wym">
+                                            <rect key="frame" x="0.0" y="5" width="160" height="40"/>
+                                        </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="LFs-ys-wym" secondAttribute="trailing" id="01r-4v-Mlx"/>
+                                        <constraint firstItem="LFs-ys-wym" firstAttribute="leading" secondItem="gUv-zr-6ex" secondAttribute="leading" id="6Gf-2M-rQp"/>
+                                        <constraint firstItem="LFs-ys-wym" firstAttribute="top" secondItem="gUv-zr-6ex" secondAttribute="top" constant="5" id="AHp-BC-xrL"/>
                                         <constraint firstItem="aEx-8i-sxt" firstAttribute="leading" secondItem="gUv-zr-6ex" secondAttribute="leading" id="M8F-CE-Ue0"/>
                                         <constraint firstItem="aEx-8i-sxt" firstAttribute="top" secondItem="gUv-zr-6ex" secondAttribute="top" id="Veh-EF-yvY"/>
+                                        <constraint firstAttribute="bottom" secondItem="LFs-ys-wym" secondAttribute="bottom" constant="5" id="WGi-rx-mDd"/>
                                         <constraint firstAttribute="bottom" secondItem="aEx-8i-sxt" secondAttribute="bottom" id="Y4R-dd-PCc"/>
                                         <constraint firstAttribute="trailing" secondItem="aEx-8i-sxt" secondAttribute="trailing" id="nhL-J4-Hza"/>
                                     </constraints>
                                 </view>
                             </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="CO4-Cj-BYm" firstAttribute="leading" secondItem="9Rp-s7-cfd" secondAttribute="leading" id="014-xG-dSd"/>
                         <constraint firstAttribute="bottom" secondItem="CO4-Cj-BYm" secondAttribute="bottom" id="ER9-cY-LVJ"/>
@@ -73,6 +87,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <color key="backgroundColor" red="0.91814291477203369" green="0.77877950668334961" blue="0.54332613945007324" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="9Rp-s7-cfd" secondAttribute="bottom" id="EFk-IE-ABx"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="9Rp-s7-cfd" secondAttribute="trailing" id="GF4-zv-OBV"/>
@@ -83,8 +98,7 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="cat" width="512" height="512"/>
+        <image name="dog" width="512" height="512"/>
     </resources>
 </document>
