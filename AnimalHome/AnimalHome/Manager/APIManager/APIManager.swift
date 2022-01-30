@@ -14,7 +14,7 @@ class APIManager {
     
     static let shared: APIManager = APIManager()
     
-    private let urlStr: String = "https://data.coa.gov.tw/api/v1/AnimalRecognition/?%24top=1000&Page=1&animal_area_pkid=2"
+    private let urlStr: String = "https://data.coa.gov.tw/api/v1/AnimalRecognition/"
     
     private init() {}
     
