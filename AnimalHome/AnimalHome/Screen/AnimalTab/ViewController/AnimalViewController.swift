@@ -37,6 +37,10 @@ class AnimalViewController: UIViewController {
         return layout
     }()
     
+    private lazy var laodingView: UIActivityIndicatorView = {
+        return UIActivityIndicatorView()
+    }()
+    
     private lazy var viewModel: AnimalViewModel = {
         let viewModel = AnimalViewModel()
         viewModel.delegate = self
@@ -49,11 +53,12 @@ class AnimalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "浪浪之家"
-        self.view.backgroundColor = .black34Color
+        self.view.backgroundColor = .clear
         setupNavigation()
         register()
         setupUI()
         setupCollectionView()
+        laodingView.startAnimating()
         viewModel.featchAPI()
         
     }
@@ -74,6 +79,14 @@ class AnimalViewController: UIViewController {
         self.collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.collectionView.snp.makeConstraints { make in
             make.left.top.right.bottom.equalTo(self.view).offset(0)
+        }
+        
+        self.view.addSubview(laodingView)
+        self.laodingView.translatesAutoresizingMaskIntoConstraints = false
+        self.laodingView.snp.makeConstraints { make in
+            make.centerX.centerY.equalTo(self.view)
+            make.width.lessThanOrEqualTo(300)
+            make.height.lessThanOrEqualTo(300)
         }
         
     }
@@ -117,6 +130,7 @@ extension AnimalViewController: AnimalViewModelDelegate {
     func updateInfo() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+            self.laodingView.stopAnimating()
             let infos = self.viewModel.getCurrntTypeInfos()
             self.leftBarView.set(total: infos.count)
         }
