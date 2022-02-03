@@ -81,6 +81,8 @@
 		FA63D74E2781C43C001ED17C /* AnimalHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D74D2781C43C001ED17C /* AnimalHomeUITests.swift */; };
 		FA63D7502781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D74F2781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift */; };
 		FA8F1F1427AB5F6E007CACE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F1F1327AB5F6E007CACE6 /* Constants.swift */; };
+		FA8F1F1C27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F1F1A27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.swift */; };
+		FA8F1F1D27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA8F1F1B27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.xib */; };
 		FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */; };
 		FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD172781D82A0097B473 /* AnimalViewController.swift */; };
 		FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */; };
@@ -169,6 +171,8 @@
 		FA63D74D2781C43C001ED17C /* AnimalHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHomeUITests.swift; sourceTree = "<group>"; };
 		FA63D74F2781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA8F1F1327AB5F6E007CACE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA8F1F1A27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFooterCollectionReusableView.swift; sourceTree = "<group>"; };
+		FA8F1F1B27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalFooterCollectionReusableView.xib; sourceTree = "<group>"; };
 		FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA9ABD172781D82A0097B473 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalViewController.storyboard; sourceTree = "<group>"; };
@@ -418,6 +422,15 @@
 			path = AnimalHomeUITests;
 			sourceTree = "<group>";
 		};
+		FA8F1F1927AB75D8007CACE6 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				FA8F1F1A27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.swift */,
+				FA8F1F1B27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.xib */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		FA9ABD112781D2640097B473 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +463,7 @@
 		FA9ABD192781DA3D0097B473 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA8F1F1927AB75D8007CACE6 /* FooterView */,
 				FA62DCDC278DE7A30096B523 /* NavigationBarView */,
 				FA30719B2789DCAA0021B006 /* HeaderView */,
 				FA9ABD1A2781DA440097B473 /* Cell */,
@@ -810,6 +824,7 @@
 				FAF0409F279D31EA00025046 /* MyFavoriteViewController.storyboard in Resources */,
 				FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */,
 				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
+				FA8F1F1D27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.xib in Resources */,
 				FA62DCE1278DE8010096B523 /* AnimalLeftBarView.xib in Resources */,
 				FAF040AC279D369E00025046 /* MyFavoriteTableViewCell.xib in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
@@ -1018,6 +1033,7 @@
 				FA245B512791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift in Sources */,
 				FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */,
 				FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */,
+				FA8F1F1C27AB75F2007CACE6 /* AnimalFooterCollectionReusableView.swift in Sources */,
 				FA245B472791CC380053BFF5 /* AnimalCollectionReusableView.swift in Sources */,
 				FAF040A8279D353400025046 /* MyFavoriteViewModel.swift in Sources */,
 				FA3071A32789FB0C0021B006 /* Animal.swift in Sources */,

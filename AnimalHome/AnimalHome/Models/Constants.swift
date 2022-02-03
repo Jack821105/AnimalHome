@@ -17,9 +17,9 @@ struct Constants {
     static var adUnitsID: String {
         var str: String
         str = "ca-app-pub-4019849596267760/1317985366"
-//        #if DEBUG
-//        str = "ca-app-pub-3940256099942544/2934735716"
-//        #endif
+        #if DEBUG
+        str = "ca-app-pub-3940256099942544/2934735716"
+        #endif
         return str
     }
     

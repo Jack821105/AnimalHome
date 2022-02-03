@@ -112,13 +112,18 @@ class AnimalViewController: UIViewController {
     private func setupCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        
     }
     
     private func register() {
         
-        let nib2 = UINib(nibName: AnimalCollectionReusableView.nibName, bundle: nil)
-        self.collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AnimalCollectionReusableView.nibName)
+        let nib1 = UINib(nibName: AnimalCollectionReusableView.nibName, bundle: nil)
+        self.collectionView.register(nib1, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AnimalCollectionReusableView.nibName)
         
+        let nib2 = UINib(nibName: AnimalFooterCollectionReusableView.nibName, bundle: nil)
+        self.collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AnimalFooterCollectionReusableView.nibName)
+        
+
         let nib3 = UINib(nibName: AnimalListCollectionViewCell.nibName, bundle: nil)
         self.collectionView.register(nib3, forCellWithReuseIdentifier: AnimalListCollectionViewCell.nibName)
     }
@@ -165,8 +170,28 @@ extension AnimalViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return section == 0 ? CGSize(width: collectionView.frame.width, height: 50) : .zero
+        
+        switch section {
+            case 0:
+                return CGSize(width: collectionView.frame.width, height: 50)
+            default:
+                return .zero
+        }
+        
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        switch section {
+            case 0:
+                return CGSize(width: collectionView.frame.width, height: 50)
+            default:
+                return .zero
+        }
+        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
@@ -175,6 +200,13 @@ extension AnimalViewController: UICollectionViewDelegate {
             headerView.delegate = self
             return headerView
         }
+        
+        if kind == UICollectionView.elementKindSectionFooter,
+           let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AnimalFooterCollectionReusableView.nibName, for: indexPath) as? AnimalFooterCollectionReusableView {
+            footerView.backgroundColor = .clear
+            return footerView
+        }
+        
         
         return UICollectionReusableView()
         
