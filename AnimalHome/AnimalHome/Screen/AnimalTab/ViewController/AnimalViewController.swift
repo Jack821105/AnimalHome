@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FirebaseRemoteConfig
+import GoogleMobileAds
 
 // MARK: - StoryboardInstantiable
 
@@ -48,6 +49,14 @@ class AnimalViewController: UIViewController {
     }()
     
     
+    private lazy var bannerView: GADBannerView = {
+        let view = GADBannerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120))
+        view.adUnitID = Constants.adUnitsID
+        view.rootViewController = self
+        view.delegate = self
+        return view
+    }()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -60,7 +69,7 @@ class AnimalViewController: UIViewController {
         setupCollectionView()
         laodingView.startAnimating()
         viewModel.featchAPI()
-        
+        bannerView.load(GADRequest())
     }
     
     // MARK: - SetupUI
@@ -87,6 +96,13 @@ class AnimalViewController: UIViewController {
             make.centerX.centerY.equalTo(self.view)
             make.width.lessThanOrEqualTo(300)
             make.height.lessThanOrEqualTo(300)
+        }
+        
+        self.view.addSubview(bannerView)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.snp.makeConstraints { make in
+            make.left.bottom.right.equalTo(self.view).offset(0)
+            make.height.lessThanOrEqualTo(120.0)
         }
         
     }
@@ -235,6 +251,29 @@ extension AnimalViewController: AnimalListCollectionViewCellDelegate {
         var infos = MyFavoriteManager.shared.readData()
         infos.append(info)
         MyFavoriteManager.shared.writeData(saveDate: infos)
+    }
+    
+}
+
+
+// MARK: - GADBannerViewDelegate
+
+extension AnimalViewController: GADBannerViewDelegate {
+    
+    
+    func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+        // A unified native ad has loaded, and can be displayed.
+        
+        Logger.log("JACK DEV 成功")
+    }
+    
+    func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+        // The adLoader has finished loading ads, and a new request can be sent.
+        Logger.log("JACK DEV1 失敗 \(error)")
+    }
+    
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+        Logger.log("JACK DEV2 失敗 \(error)")
     }
     
 }

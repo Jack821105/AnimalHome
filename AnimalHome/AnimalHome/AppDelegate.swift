@@ -7,6 +7,8 @@
 
 import UIKit
 import Firebase
+import GoogleMobileAds
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        // 處理 Firebase
         FirebaseApp.configure()
+        
+        // 處理 Google廣告
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         setupNavigationBarAppearance()
         setupTabBarAppearance()
         
+        // 設定一開始的畫面
         let window = UIWindow(frame: UIScreen.main.bounds)
         let landingVC = LoadingViewController()
         let nav = UINavigationController(rootViewController: landingVC)
