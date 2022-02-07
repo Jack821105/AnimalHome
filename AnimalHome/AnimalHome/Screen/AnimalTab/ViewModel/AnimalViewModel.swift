@@ -22,8 +22,9 @@ class AnimalViewModel {
     
     private var catInfos: [Animal] = []
     
-    var currentAnimalType: AnimalViewController.AnimalType = .dog
+    private var otherInos: [Animal] = []
     
+    var currentAnimalType: AnimalViewController.AnimalType = .dog
     
     weak var delegate: AnimalViewModelDelegate?
     
@@ -47,6 +48,9 @@ class AnimalViewModel {
         self.catInfos = animalList.filter {
             $0.animalType == .cat
         }
+        self.otherInos = animalList.filter{
+            $0.animalType == .other
+        }
     }
     
     func getCurrntTypeInfos() -> [Animal] {
@@ -56,6 +60,8 @@ class AnimalViewModel {
                 return dogInfos
             case .cat:
                 return catInfos
+            case .other:
+                return otherInos
         }
     }
     

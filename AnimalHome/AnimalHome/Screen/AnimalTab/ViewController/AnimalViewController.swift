@@ -17,37 +17,13 @@ extension AnimalViewController: StoryboardInstantiable {}
 /// 動物主頁
 class AnimalViewController: UIViewController {
     
-    private lazy var leftBarView: AnimalLeftBarView = {
-        let view = AnimalLeftBarView.instantiate()
-        return view
-    }()
-    
-    private lazy var collectionView: UICollectionView = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        view.backgroundColor = .clear
-        return view
-    }()
     
     
-    private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.scrollDirection = .vertical
-        layout.sectionHeadersPinToVisibleBounds = true
-        return layout
-    }()
+    // MARK: - UI Properties
     
     private lazy var laodingView: UIActivityIndicatorView = {
         return UIActivityIndicatorView()
     }()
-    
-    private lazy var viewModel: AnimalViewModel = {
-        let viewModel = AnimalViewModel()
-        viewModel.delegate = self
-        return viewModel
-    }()
-    
     
     private lazy var bannerView: GADBannerView = {
         let view = GADBannerView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 120))
@@ -57,76 +33,73 @@ class AnimalViewController: UIViewController {
         return view
     }()
     
+    private lazy var tabView: AnimalTypeTabView = {
+        let view = AnimalTypeTabView()
+        view.delegate = self
+        return view
+    }()
+    
+    private lazy var pageViewController: UIPageViewController = {
+        return UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    }()
+    
+    
+    // MARK: - Properties
+    
+    private lazy var viewControllers: [UIViewController] = {
+        let vc1 = UIViewController()
+        vc1.view.backgroundColor = .black34Color
+        let vc2 = UIViewController()
+        vc2.view.backgroundColor = .greenColor
+        let vc3 = UIViewController()
+        vc3.view.backgroundColor = .red
+        return [vc1, vc2, vc3]
+    }()
+    
+    private var currentTabIndex: Int = 0
+    
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "浪浪之家"
         self.view.backgroundColor = .clear
-        setupNavigation()
-        register()
-        setupUI()
-        setupCollectionView()
-        laodingView.startAnimating()
-        viewModel.featchAPI()
-        bannerView.load(GADRequest())
+        setupTabView()
+        setupPageViewController()
+        handleViewControllerDirection(index: currentTabIndex, animated: false)
+//        bannerView.load(GADRequest())
     }
     
     // MARK: - SetupUI
     
-    private func setupNavigation() {
-        leftBarView.translatesAutoresizingMaskIntoConstraints = false
-        leftBarView.snp.makeConstraints {
-            $0.width.greaterThanOrEqualTo(110)
-            $0.height.greaterThanOrEqualTo(30)
-        }
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarView)
+    private func setupTabView() {
+//        tabView.delegate = self
+        tabView.configure(with: ["狗", "貓", "其他"])
+        tabView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tabView)
+        tabView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tabView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tabView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tabView.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
-    private func setupUI() {
-        self.view.addSubview(collectionView)
-        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.collectionView.snp.makeConstraints { make in
-            make.left.top.right.bottom.equalTo(self.view).offset(0)
-        }
-        
-        self.view.addSubview(laodingView)
-        self.laodingView.translatesAutoresizingMaskIntoConstraints = false
-        self.laodingView.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(self.view)
-            make.width.lessThanOrEqualTo(300)
-            make.height.lessThanOrEqualTo(300)
-        }
-        
-        self.view.addSubview(bannerView)
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.snp.makeConstraints { make in
-            make.left.bottom.right.equalTo(self.view).offset(0)
-            make.height.lessThanOrEqualTo(120.0)
-        }
-        
+    private func setupPageViewController() {
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
+        pageViewController.didMove(toParent: self)
+        addChild(pageViewController)
+        view.addSubview(pageViewController.view)
+        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        pageViewController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        pageViewController.view.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        pageViewController.view.topAnchor.constraint(equalTo: tabView.bottomAnchor).isActive = true
+        pageViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
+   
     
     // MARK: - Func
     
-    private func setupCollectionView() {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        
-    }
-    
-    private func register() {
-        
-        let nib1 = UINib(nibName: AnimalCollectionReusableView.nibName, bundle: nil)
-        self.collectionView.register(nib1, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AnimalCollectionReusableView.nibName)
-        
-        let nib2 = UINib(nibName: AnimalFooterCollectionReusableView.nibName, bundle: nil)
-        self.collectionView.register(nib2, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: AnimalFooterCollectionReusableView.nibName)
-        
-
-        let nib3 = UINib(nibName: AnimalListCollectionViewCell.nibName, bundle: nil)
-        self.collectionView.register(nib3, forCellWithReuseIdentifier: AnimalListCollectionViewCell.nibName)
-    }
     
     
 }
@@ -140,153 +113,11 @@ extension AnimalViewController {
         case dog
         
         case cat
+        
+        case other
     }
     
 }
-
-// MARK: - AnimalViewModelDelegate
-
-extension AnimalViewController: AnimalViewModelDelegate {
-    
-    func updateInfo() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-            self.laodingView.stopAnimating()
-            let infos = self.viewModel.getCurrntTypeInfos()
-            self.leftBarView.set(total: infos.count)
-        }
-    }
-    
-}
-
-// MARK: - UICollectionViewDelegate
-
-extension AnimalViewController: UICollectionViewDelegate {
-    
-    
-    /// Header
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        
-        switch section {
-            case 0:
-                return CGSize(width: collectionView.frame.width, height: 50)
-            default:
-                return .zero
-        }
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        
-        switch section {
-            case 0:
-                return CGSize(width: collectionView.frame.width, height: 50)
-            default:
-                return .zero
-        }
-        
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        if kind == UICollectionView.elementKindSectionHeader,
-           let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AnimalCollectionReusableView.nibName, for: indexPath) as? AnimalCollectionReusableView {
-            headerView.delegate = self
-            return headerView
-        }
-        
-        if kind == UICollectionView.elementKindSectionFooter,
-           let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AnimalFooterCollectionReusableView.nibName, for: indexPath) as? AnimalFooterCollectionReusableView {
-            footerView.backgroundColor = .clear
-            return footerView
-        }
-        
-        
-        return UICollectionReusableView()
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let infos = self.viewModel.getCurrntTypeInfos()
-        let info = infos[indexPath.row]
-        let vc = AnimalDetailViewController.instantiate()
-        vc.setInfo(info: info)
-        navigationController?.pushViewController(vc, animated: true)
-    }
-    
-}
-
-// MARK: - UICollectionViewDelegateFlowLayout
-
-extension AnimalViewController: UICollectionViewDelegateFlowLayout {
-    
-    /// collectionView單元格尺寸
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: collectionView.bounds.width, height: 120)
-    }
-    
-}
-
-// MARK: - UICollectionViewDataSource
-
-extension AnimalViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let infos = viewModel.getCurrntTypeInfos()
-        return infos.isEmpty ? 0 : infos.count
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let infos = viewModel.getCurrntTypeInfos()
-        let info = infos[indexPath.row]
-        
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalListCollectionViewCell.nibName, for: indexPath) as! AnimalListCollectionViewCell
-        cell.delegate = self
-        cell.set(info: info)
-        
-        return cell
-    }
-    
-    
-}
-
-
-// MARK: - AnimalCollectionReusableViewDelegate
-
-extension AnimalViewController: AnimalCollectionReusableViewDelegate {
-    
-    func didTapAnimalType(animalType: AnimalType) {
-        DispatchQueue.main.async {
-            self.viewModel.currentAnimalType = animalType
-            self.leftBarView.set(total: self.viewModel.getCurrntTypeInfos().count)
-            self.collectionView.reloadData()
-        }
-    }
-    
-    
-}
-
-
-// MARK: - AnimalListCollectionViewCellDelegate
-
-extension AnimalViewController: AnimalListCollectionViewCellDelegate {
-    
-    func addMyFavorite(info: Animal) {
-        var infos = MyFavoriteManager.shared.readData()
-        infos.append(info)
-        MyFavoriteManager.shared.writeData(saveDate: infos)
-    }
-    
-}
-
 
 // MARK: - GADBannerViewDelegate
 
@@ -306,6 +137,92 @@ extension AnimalViewController: GADBannerViewDelegate {
     
     func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
         Logger.log("JACK DEV2 失敗 \(error)")
+    }
+    
+}
+
+
+// MARK: - UIPageViewControllerDataSource
+
+extension AnimalViewController: UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
+        guard let currentIndex = viewControllers.firstIndex(of: viewController) else {
+            return nil
+        }
+        
+        let nextIndex = currentIndex - 1
+        
+        guard viewControllers.indices.contains(nextIndex) else {
+            return nil
+        }
+        
+        return viewControllers[nextIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
+        guard let currentIndex = viewControllers.firstIndex(of: viewController) else {
+            return nil
+        }
+        
+        let nextIndex = currentIndex + 1
+        
+        guard viewControllers.indices.contains(nextIndex) else {
+            return nil
+        }
+        
+        return viewControllers[nextIndex]
+    }
+    
+}
+ 
+// MARK: - UIPageViewControllerDelegate
+
+extension AnimalViewController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        
+        if completed,
+           let visibleViewController = pageViewController.viewControllers?.first,
+           let index = viewControllers.firstIndex(of: visibleViewController) {
+             
+            tabView.scrollToTabButton(for: index)
+            
+            currentTabIndex = index
+        }
+    }
+    
+}
+
+extension AnimalViewController: AnimalTypeTabViewDelegate {
+ 
+    func didTapTabButon(for index: Int) {
+        
+        handleViewControllerDirection(index: index, animated: true)
+        
+    }
+    
+    
+    private func handleViewControllerDirection(index: Int, animated: Bool) {
+        
+        guard viewControllers.indices.contains(index) else { return }
+              
+        let viewController = viewControllers[index]
+        
+        let direction: UIPageViewController.NavigationDirection = index > currentTabIndex ? .forward : .reverse
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+                            
+            self?.pageViewController.setViewControllers([viewController], direction: direction, animated: animated) { finished in
+                
+                if finished {
+                    self?.tabView.scrollToTabButton(for: index)
+                    self?.currentTabIndex = index
+                }
+            }
+        }
     }
     
 }
