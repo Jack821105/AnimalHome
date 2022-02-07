@@ -84,7 +84,7 @@ struct Animal: Codable {
     enum AnimalType: String, Codable {
         case dog = "狗"
         case cat = "貓"
-        case other = ""
+        case other = "其他"
     }
     
     enum BodyType: String, Codable {
