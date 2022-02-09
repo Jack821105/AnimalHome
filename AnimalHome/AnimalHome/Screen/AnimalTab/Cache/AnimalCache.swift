@@ -18,13 +18,13 @@ class AnimalCache: FileDataProviderBase<[Animal]> {
     }
     
     override func updateCache(callback: @escaping ((FileDataProviderBase<[Animal]>.CacheData) -> Void), errorHandler: @escaping ((Error) -> Void)) {
-        
-        APIManager.shared.send { dateInfo in
-            let animal = dateInfo.data
-            callback(animal)
-        } errorHandler: { _ in
-            
-        }
+//        
+//        APIManager.shared.send { dateInfo in
+//            let animal = dateInfo.data
+//            callback(animal)
+//        } errorHandler: { _ in
+//            
+//        }
 
     }
     

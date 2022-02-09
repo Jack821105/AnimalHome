@@ -73,6 +73,20 @@
 		FA63D74E2781C43C001ED17C /* AnimalHomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D74D2781C43C001ED17C /* AnimalHomeUITests.swift */; };
 		FA63D7502781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63D74F2781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift */; };
 		FA8F1F1427AB5F6E007CACE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F1F1327AB5F6E007CACE6 /* Constants.swift */; };
+		FA97305227B3F1F000E5EBA8 /* AnimalListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA97305027B3F1F000E5EBA8 /* AnimalListTableViewCell.xib */; };
+		FA97305327B3F1F000E5EBA8 /* AnimalListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97305127B3F1F000E5EBA8 /* AnimalListTableViewCell.swift */; };
+		FA97305527B3F26F00E5EBA8 /* DogListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97305427B3F26F00E5EBA8 /* DogListViewController.swift */; };
+		FA97305727B3F27500E5EBA8 /* DogListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97305627B3F27500E5EBA8 /* DogListViewController.storyboard */; };
+		FA97305A27B3F6C600E5EBA8 /* DogListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97305927B3F6C600E5EBA8 /* DogListViewModel.swift */; };
+		FA97305D27B3F9CD00E5EBA8 /* DogListCahce.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97305C27B3F9CD00E5EBA8 /* DogListCahce.swift */; };
+		FA97306027B3FCC400E5EBA8 /* CatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97305F27B3FCC400E5EBA8 /* CatListViewController.swift */; };
+		FA97306227B3FCCC00E5EBA8 /* CatListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97306127B3FCCC00E5EBA8 /* CatListViewController.storyboard */; };
+		FA97306527B3FF2700E5EBA8 /* CatListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97306427B3FF2700E5EBA8 /* CatListViewModel.swift */; };
+		FA97306827B3FF5C00E5EBA8 /* CatListCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97306727B3FF5C00E5EBA8 /* CatListCache.swift */; };
+		FA97306C27B4016E00E5EBA8 /* OtherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97306B27B4016E00E5EBA8 /* OtherListViewController.swift */; };
+		FA97306E27B4017400E5EBA8 /* OtherListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97306D27B4017400E5EBA8 /* OtherListViewController.storyboard */; };
+		FA97307227B4021100E5EBA8 /* OtherCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97307127B4021100E5EBA8 /* OtherCache.swift */; };
+		FA97307527B4026400E5EBA8 /* OtherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97307427B4026400E5EBA8 /* OtherListViewModel.swift */; };
 		FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */; };
 		FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD172781D82A0097B473 /* AnimalViewController.swift */; };
 		FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */; };
@@ -158,6 +172,20 @@
 		FA63D74D2781C43C001ED17C /* AnimalHomeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHomeUITests.swift; sourceTree = "<group>"; };
 		FA63D74F2781C43C001ED17C /* AnimalHomeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHomeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FA8F1F1327AB5F6E007CACE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA97305027B3F1F000E5EBA8 /* AnimalListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimalListTableViewCell.xib; sourceTree = "<group>"; };
+		FA97305127B3F1F000E5EBA8 /* AnimalListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalListTableViewCell.swift; sourceTree = "<group>"; };
+		FA97305427B3F26F00E5EBA8 /* DogListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewController.swift; sourceTree = "<group>"; };
+		FA97305627B3F27500E5EBA8 /* DogListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DogListViewController.storyboard; sourceTree = "<group>"; };
+		FA97305927B3F6C600E5EBA8 /* DogListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListViewModel.swift; sourceTree = "<group>"; };
+		FA97305C27B3F9CD00E5EBA8 /* DogListCahce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogListCahce.swift; sourceTree = "<group>"; };
+		FA97305F27B3FCC400E5EBA8 /* CatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewController.swift; sourceTree = "<group>"; };
+		FA97306127B3FCCC00E5EBA8 /* CatListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CatListViewController.storyboard; sourceTree = "<group>"; };
+		FA97306427B3FF2700E5EBA8 /* CatListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListViewModel.swift; sourceTree = "<group>"; };
+		FA97306727B3FF5C00E5EBA8 /* CatListCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatListCache.swift; sourceTree = "<group>"; };
+		FA97306B27B4016E00E5EBA8 /* OtherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherListViewController.swift; sourceTree = "<group>"; };
+		FA97306D27B4017400E5EBA8 /* OtherListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtherListViewController.storyboard; sourceTree = "<group>"; };
+		FA97307127B4021100E5EBA8 /* OtherCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCache.swift; sourceTree = "<group>"; };
+		FA97307427B4026400E5EBA8 /* OtherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherListViewModel.swift; sourceTree = "<group>"; };
 		FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA9ABD172781D82A0097B473 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalViewController.storyboard; sourceTree = "<group>"; };
@@ -382,6 +410,139 @@
 			path = AnimalHomeUITests;
 			sourceTree = "<group>";
 		};
+		FA97304927B3F1A200E5EBA8 /* AnimalSub */ = {
+			isa = PBXGroup;
+			children = (
+				FA97304E27B3F1F000E5EBA8 /* View */,
+				FA97304C27B3F1C400E5EBA8 /* OtherList */,
+				FA97304B27B3F1BD00E5EBA8 /* CatList */,
+				FA97304A27B3F1B500E5EBA8 /* DogList */,
+			);
+			path = AnimalSub;
+			sourceTree = "<group>";
+		};
+		FA97304A27B3F1B500E5EBA8 /* DogList */ = {
+			isa = PBXGroup;
+			children = (
+				FA97305B27B3F9B700E5EBA8 /* Cahce */,
+				FA97305827B3F69900E5EBA8 /* ViewModel */,
+				FA97304D27B3F1CC00E5EBA8 /* ViewController */,
+			);
+			path = DogList;
+			sourceTree = "<group>";
+		};
+		FA97304B27B3F1BD00E5EBA8 /* CatList */ = {
+			isa = PBXGroup;
+			children = (
+				FA97306627B3FF4C00E5EBA8 /* Cache */,
+				FA97306327B3FE5400E5EBA8 /* ViewModel */,
+				FA97305E27B3FCA800E5EBA8 /* ViewController */,
+			);
+			path = CatList;
+			sourceTree = "<group>";
+		};
+		FA97304C27B3F1C400E5EBA8 /* OtherList */ = {
+			isa = PBXGroup;
+			children = (
+				FA97307027B4018C00E5EBA8 /* Cache */,
+				FA97306F27B4018300E5EBA8 /* ViewModel */,
+				FA97306927B4014800E5EBA8 /* ViewController */,
+			);
+			path = OtherList;
+			sourceTree = "<group>";
+		};
+		FA97304D27B3F1CC00E5EBA8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA97305427B3F26F00E5EBA8 /* DogListViewController.swift */,
+				FA97305627B3F27500E5EBA8 /* DogListViewController.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FA97304E27B3F1F000E5EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA97304F27B3F1F000E5EBA8 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA97304F27B3F1F000E5EBA8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA97305027B3F1F000E5EBA8 /* AnimalListTableViewCell.xib */,
+				FA97305127B3F1F000E5EBA8 /* AnimalListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FA97305827B3F69900E5EBA8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA97305927B3F6C600E5EBA8 /* DogListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA97305B27B3F9B700E5EBA8 /* Cahce */ = {
+			isa = PBXGroup;
+			children = (
+				FA97305C27B3F9CD00E5EBA8 /* DogListCahce.swift */,
+			);
+			path = Cahce;
+			sourceTree = "<group>";
+		};
+		FA97305E27B3FCA800E5EBA8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA97305F27B3FCC400E5EBA8 /* CatListViewController.swift */,
+				FA97306127B3FCCC00E5EBA8 /* CatListViewController.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FA97306327B3FE5400E5EBA8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA97306427B3FF2700E5EBA8 /* CatListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA97306627B3FF4C00E5EBA8 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FA97306727B3FF5C00E5EBA8 /* CatListCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		FA97306927B4014800E5EBA8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA97306B27B4016E00E5EBA8 /* OtherListViewController.swift */,
+				FA97306D27B4017400E5EBA8 /* OtherListViewController.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FA97306F27B4018300E5EBA8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA97307427B4026400E5EBA8 /* OtherListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA97307027B4018C00E5EBA8 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				FA97307127B4021100E5EBA8 /* OtherCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		FA9ABD112781D2640097B473 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +600,7 @@
 		FADBC2AB2781CA9500B9A26B /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				FA97304927B3F1A200E5EBA8 /* AnimalSub */,
 				FA3071A4278A06240021B006 /* AnimalDetail */,
 				FA9ABD152781D7F60097B473 /* AnimalTab */,
 				FADBC2AC2781CA9C00B9A26B /* Loading */,
@@ -772,13 +934,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA97305727B3F27500E5EBA8 /* DogListViewController.storyboard in Resources */,
 				FA245B522791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib in Resources */,
 				FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */,
 				FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */,
+				FA97306227B3FCCC00E5EBA8 /* CatListViewController.storyboard in Resources */,
 				FAF0409F279D31EA00025046 /* MyFavoriteViewController.storyboard in Resources */,
 				FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */,
 				FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */,
+				FA97305227B3F1F000E5EBA8 /* AnimalListTableViewCell.xib in Resources */,
 				FAF040AC279D369E00025046 /* MyFavoriteTableViewCell.xib in Resources */,
+				FA97306E27B4017400E5EBA8 /* OtherListViewController.storyboard in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
 				FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */,
 				FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */,
@@ -954,6 +1120,7 @@
 				FAF4B4102786F1B3008C4D3A /* TimeZoneExtension.swift in Sources */,
 				FA8F1F1427AB5F6E007CACE6 /* Constants.swift in Sources */,
 				FA62DCE8278DF9B60096B523 /* ConfigModel.swift in Sources */,
+				FA97306027B3FCC400E5EBA8 /* CatListViewController.swift in Sources */,
 				FAF4B4202786F63C008C4D3A /* FileDataProviderBase.swift in Sources */,
 				FAF040AB279D369E00025046 /* MyFavoriteTableViewCell.swift in Sources */,
 				FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */,
@@ -964,30 +1131,39 @@
 				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
 				FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */,
 				FAA9B423278759B40066F26E /* AnimalViewModel.swift in Sources */,
+				FA97305527B3F26F00E5EBA8 /* DogListViewController.swift in Sources */,
+				FA97305327B3F1F000E5EBA8 /* AnimalListTableViewCell.swift in Sources */,
 				FAF4B43627870A3E008C4D3A /* GeneralTool.swift in Sources */,
 				FAF4B43E27872457008C4D3A /* AnimalCache.swift in Sources */,
 				FAA9B41E278756D40066F26E /* Ext_UIColor.swift in Sources */,
 				FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */,
+				FA97305A27B3F6C600E5EBA8 /* DogListViewModel.swift in Sources */,
 				FAF4B4242786F88B008C4D3A /* FileDataCacheConfig.swift in Sources */,
 				FA3071A7278A08220021B006 /* AnimalDetailViewController.swift in Sources */,
 				FAF4B4082786E7BB008C4D3A /* StoryboardInstantiable.swift in Sources */,
 				FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */,
 				FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */,
 				FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */,
+				FA97305D27B3F9CD00E5EBA8 /* DogListCahce.swift in Sources */,
 				FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */,
 				FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */,
 				FAF0409D279D31E400025046 /* MyFavoriteViewController.swift in Sources */,
 				FAF4B41D2786F413008C4D3A /* Logger.swift in Sources */,
 				FAF4B42C2786F934008C4D3A /* ReloadTime.swift in Sources */,
+				FA97307527B4026400E5EBA8 /* OtherListViewModel.swift in Sources */,
+				FA97306827B3FF5C00E5EBA8 /* CatListCache.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,
 				FA245B512791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift in Sources */,
 				FAEFF4FC27B1424600CDFED3 /* AnimalTypeTabView.swift in Sources */,
+				FA97306C27B4016E00E5EBA8 /* OtherListViewController.swift in Sources */,
 				FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */,
 				FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */,
 				FAF040A8279D353400025046 /* MyFavoriteViewModel.swift in Sources */,
+				FA97306527B3FF2700E5EBA8 /* CatListViewModel.swift in Sources */,
 				FA3071A32789FB0C0021B006 /* Animal.swift in Sources */,
 				FAF4B4222786F6BA008C4D3A /* FileDataCacheBase.swift in Sources */,
 				FAF4B4272786F8D3008C4D3A /* StringExtensions.swift in Sources */,
+				FA97307227B4021100E5EBA8 /* OtherCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,18 +46,28 @@ class AnimalViewController: UIViewController {
     
     // MARK: - Properties
     
+    private lazy var dogListVC: DogListViewController = {
+        let vc = DogListViewController.instantiate()
+        return vc
+    }()
+    
+    private lazy var catListVC: CatListViewController = {
+        let vc = CatListViewController.instantiate()
+        return vc
+    }()
+    
+    private lazy var otherListVC: OtherListViewController = {
+        let vc = OtherListViewController.instantiate()
+        return vc
+    }()
+    
     private lazy var viewControllers: [UIViewController] = {
-        let vc1 = UIViewController()
-        vc1.view.backgroundColor = .black34Color
-        let vc2 = UIViewController()
-        vc2.view.backgroundColor = .greenColor
-        let vc3 = UIViewController()
-        vc3.view.backgroundColor = .red
-        return [vc1, vc2, vc3]
+        return [dogListVC, catListVC, otherListVC]
     }()
     
     private var currentTabIndex: Int = 0
     
+    private let pageTypes: [AnimalType] = [.dog, .cat, .other]
     
     // MARK: - Life Cycle
     
@@ -75,7 +85,10 @@ class AnimalViewController: UIViewController {
     
     private func setupTabView() {
 //        tabView.delegate = self
-        tabView.configure(with: ["狗", "貓", "其他"])
+        let pageTitles = pageTypes.map {
+            $0.getTitle()
+        }
+        tabView.configure(with: pageTitles)
         tabView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tabView)
         tabView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -96,28 +109,9 @@ class AnimalViewController: UIViewController {
         pageViewController.view.topAnchor.constraint(equalTo: tabView.bottomAnchor).isActive = true
         pageViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-   
-    
-    // MARK: - Func
-    
-    
-    
 }
 
-// MARK: - 擴充區
 
-extension AnimalViewController {
-    
-    enum AnimalType {
-        
-        case dog
-        
-        case cat
-        
-        case other
-    }
-    
-}
 
 // MARK: - GADBannerViewDelegate
 
@@ -225,4 +219,25 @@ extension AnimalViewController: AnimalTypeTabViewDelegate {
         }
     }
     
+}
+
+
+enum AnimalType {
+    
+    case dog
+    
+    case cat
+    
+    case other
+    
+    func getTitle() -> String {
+        switch self {
+        case .dog:
+            return "狗"
+        case .cat:
+            return "貓"
+        case .other:
+            return "其他"
+        }
+    }
 }

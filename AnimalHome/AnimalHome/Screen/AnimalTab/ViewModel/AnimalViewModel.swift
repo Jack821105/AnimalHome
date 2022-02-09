@@ -24,7 +24,7 @@ class AnimalViewModel {
     
     private var otherInos: [Animal] = []
     
-    var currentAnimalType: AnimalViewController.AnimalType = .dog
+    var currentAnimalType: AnimalType = .dog
     
     weak var delegate: AnimalViewModelDelegate?
     

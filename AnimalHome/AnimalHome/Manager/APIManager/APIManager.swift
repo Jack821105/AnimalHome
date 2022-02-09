@@ -16,12 +16,14 @@ class APIManager {
     
     private let urlStr: String = "https://data.coa.gov.tw/api/v1/AnimalRecognition/"
     
+    private let parameterKey: String = "animal_kind"
+    
     private init() {}
     
-    func send(completionHandler: ((AnimalList) -> Void)?, errorHandler: @escaping ((Error) -> Void?)) {
+    func send(animalType: AnimalType, completionHandler: ((AnimalList) -> Void)?, errorHandler: @escaping ((Error) -> Void?)) {
         guard let url = URL(string: urlStr) else { return }
-        
-        AF.request(url).response { (afResponse: AFDataResponse<Data?>) in
+
+        AF.request(url, method: .get, parameters: [parameterKey: animalType.getTitle()]).response { (afResponse: AFDataResponse<Data?>) in
             if let afError = afResponse.error {
                 errorHandler(afError)
             } else if let data = afResponse.data {
@@ -30,6 +32,7 @@ class APIManager {
                 }
             }
         }
+        
     }
     
 }
