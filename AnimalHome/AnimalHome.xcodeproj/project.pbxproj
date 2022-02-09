@@ -22,9 +22,7 @@
 		FA16645227A6F1E500B920F4 /* AnimalDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA62DCD3278DB7290096B523 /* AnimalDetailHeaderView.swift */; };
 		FA16645327A6F1E500B920F4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
 		FA16645427A6F1E500B920F4 /* Ext_NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4132786F2EA008C4D3A /* Ext_NumberFormatter.swift */; };
-		FA16645527A6F1E500B920F4 /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B422278759B40066F26E /* AnimalViewModel.swift */; };
 		FA16645627A6F1E500B920F4 /* GeneralTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43527870A3E008C4D3A /* GeneralTool.swift */; };
-		FA16645727A6F1E500B920F4 /* AnimalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43D27872457008C4D3A /* AnimalCache.swift */; };
 		FA16645827A6F1E500B920F4 /* Ext_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B41D278756D40066F26E /* Ext_UIColor.swift */; };
 		FA16645927A6F1E500B920F4 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD172781D82A0097B473 /* AnimalViewController.swift */; };
 		FA16645A27A6F1E500B920F4 /* FileDataCacheConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4232786F88B008C4D3A /* FileDataCacheConfig.swift */; };
@@ -39,14 +37,12 @@
 		FA16646327A6F1E500B920F4 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B41C2786F413008C4D3A /* Logger.swift */; };
 		FA16646427A6F1E500B920F4 /* ReloadTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B42B2786F934008C4D3A /* ReloadTime.swift */; };
 		FA16646527A6F1E500B920F4 /* Ext_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4112786F1C8008C4D3A /* Ext_Calendar.swift */; };
-		FA16646627A6F1E500B920F4 /* AnimalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */; };
 		FA16646727A6F1E500B920F4 /* Ext_DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B40D2786F19B008C4D3A /* Ext_DateFormatter.swift */; };
 		FA16646827A6F1E500B920F4 /* Ext_Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4292786F90F008C4D3A /* Ext_Encodable.swift */; };
 		FA16646A27A6F1E500B920F4 /* MyFavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF040A7279D353400025046 /* MyFavoriteViewModel.swift */; };
 		FA16646B27A6F1E500B920F4 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A22789FB0C0021B006 /* Animal.swift */; };
 		FA16646C27A6F1E500B920F4 /* FileDataCacheBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4212786F6BA008C4D3A /* FileDataCacheBase.swift */; };
 		FA16646D27A6F1E500B920F4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4262786F8D3008C4D3A /* StringExtensions.swift */; };
-		FA16647227A6F1E500B920F4 /* AnimalListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */; };
 		FA16647327A6F1E500B920F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7372781C43C001ED17C /* LaunchScreen.storyboard */; };
 		FA16647527A6F1E500B920F4 /* AnimalDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCD5278DB7B00096B523 /* AnimalDetailHeaderView.xib */; };
 		FA16647627A6F1E500B920F4 /* MyFavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */; };
@@ -56,8 +52,6 @@
 		FA16647B27A6F1E500B920F4 /* AnimalDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */; };
 		FA16647C27A6F1E500B920F4 /* AnimalDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA62DCD9278DBCF10096B523 /* AnimalDetailTableViewCell.xib */; };
 		FA16647D27A6F1E500B920F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA63D7352781C43C001ED17C /* Assets.xcassets */; };
-		FA245B512791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */; };
-		FA245B522791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */; };
 		FA3071A32789FB0C0021B006 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A22789FB0C0021B006 /* Animal.swift */; };
 		FA3071A7278A08220021B006 /* AnimalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3071A6278A08220021B006 /* AnimalDetailViewController.swift */; };
 		FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */; };
@@ -92,10 +86,8 @@
 		FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */; };
 		FAA9B41E278756D40066F26E /* Ext_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B41D278756D40066F26E /* Ext_UIColor.swift */; };
 		FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */; };
-		FAA9B423278759B40066F26E /* AnimalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B422278759B40066F26E /* AnimalViewModel.swift */; };
 		FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */; };
 		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
-		FAEFF4FC27B1424600CDFED3 /* AnimalTypeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFF4FB27B1424600CDFED3 /* AnimalTypeTabView.swift */; };
 		FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF04089279C1F3900025046 /* MyFavoriteManager.swift */; };
 		FAF0409D279D31E400025046 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */; };
 		FAF0409F279D31EA00025046 /* MyFavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */; };
@@ -119,7 +111,6 @@
 		FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B4332787042B008C4D3A /* APIManager.swift */; };
 		FAF4B43627870A3E008C4D3A /* GeneralTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43527870A3E008C4D3A /* GeneralTool.swift */; };
 		FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43827871F7F008C4D3A /* DomainManager.swift */; };
-		FAF4B43E27872457008C4D3A /* AnimalCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF4B43D27872457008C4D3A /* AnimalCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,8 +142,6 @@
 		ED04FB13963EDE7158B1E78B /* Pods-AnimalHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimalHome.debug.xcconfig"; path = "Target Support Files/Pods-AnimalHome/Pods-AnimalHome.debug.xcconfig"; sourceTree = "<group>"; };
 		FA16648227A6F1E500B920F4 /* AnimalHomeDev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimalHomeDev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA16648327A6F1E500B920F4 /* AnimalHome copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "AnimalHome copy-Info.plist"; path = "/Users/xuzixiang/AnimalHome/AnimalHome/AnimalHome copy-Info.plist"; sourceTree = "<absolute>"; };
-		FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalListCollectionViewCell.swift; sourceTree = "<group>"; };
-		FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalListCollectionViewCell.xib; sourceTree = "<group>"; };
 		FA3071A22789FB0C0021B006 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		FA3071A6278A08220021B006 /* AnimalDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewController.swift; sourceTree = "<group>"; };
 		FA3071A8278A083A0021B006 /* AnimalDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -191,10 +180,8 @@
 		FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalViewController.storyboard; sourceTree = "<group>"; };
 		FAA9B41D278756D40066F26E /* Ext_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIColor.swift; sourceTree = "<group>"; };
 		FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIFont.swift; sourceTree = "<group>"; };
-		FAA9B422278759B40066F26E /* AnimalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewModel.swift; sourceTree = "<group>"; };
 		FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
-		FAEFF4FB27B1424600CDFED3 /* AnimalTypeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeTabView.swift; sourceTree = "<group>"; };
 		FAF04089279C1F3900025046 /* MyFavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteManager.swift; sourceTree = "<group>"; };
 		FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavoriteViewController.storyboard; sourceTree = "<group>"; };
@@ -218,7 +205,6 @@
 		FAF4B4332787042B008C4D3A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		FAF4B43527870A3E008C4D3A /* GeneralTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTool.swift; sourceTree = "<group>"; };
 		FAF4B43827871F7F008C4D3A /* DomainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainManager.swift; sourceTree = "<group>"; };
-		FAF4B43D27872457008C4D3A /* AnimalCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,15 +264,6 @@
 				AC18FE3018AB4DA029C91FB0 /* Pods-AnimalHome.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		FA245B4E2791DF840053BFF5 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				FA245B4F2791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift */,
-				FA245B502791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib */,
-			);
-			path = List;
 			sourceTree = "<group>";
 		};
 		FA3071A12789FAFD0021B006 /* Model */ = {
@@ -413,6 +390,7 @@
 		FA97304927B3F1A200E5EBA8 /* AnimalSub */ = {
 			isa = PBXGroup;
 			children = (
+				FA3071A12789FAFD0021B006 /* Model */,
 				FA97304E27B3F1F000E5EBA8 /* View */,
 				FA97304C27B3F1C400E5EBA8 /* OtherList */,
 				FA97304B27B3F1BD00E5EBA8 /* CatList */,
@@ -554,10 +532,6 @@
 		FA9ABD152781D7F60097B473 /* AnimalTab */ = {
 			isa = PBXGroup;
 			children = (
-				FA3071A12789FAFD0021B006 /* Model */,
-				FAA9B421278759930066F26E /* ViewModel */,
-				FAF4B43A2787241E008C4D3A /* Cache */,
-				FA9ABD192781DA3D0097B473 /* View */,
 				FA9ABD162781D8080097B473 /* ViewController */,
 			);
 			path = AnimalTab;
@@ -570,31 +544,6 @@
 				FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		FA9ABD192781DA3D0097B473 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FAEFF4FA27B1421500CDFED3 /* AnimalTypeTabView */,
-				FA9ABD1A2781DA440097B473 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FA9ABD1A2781DA440097B473 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				FA245B4E2791DF840053BFF5 /* List */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		FAA9B421278759930066F26E /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				FAA9B422278759B40066F26E /* AnimalViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FADBC2AB2781CA9500B9A26B /* Screen */ = {
@@ -616,14 +565,6 @@
 				FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */,
 			);
 			path = Loading;
-			sourceTree = "<group>";
-		};
-		FAEFF4FA27B1421500CDFED3 /* AnimalTypeTabView */ = {
-			isa = PBXGroup;
-			children = (
-				FAEFF4FB27B1424600CDFED3 /* AnimalTypeTabView.swift */,
-			);
-			path = AnimalTypeTabView;
 			sourceTree = "<group>";
 		};
 		FAF04087279C1EF300025046 /* Manager */ = {
@@ -782,14 +723,6 @@
 			path = DomainManager;
 			sourceTree = "<group>";
 		};
-		FAF4B43A2787241E008C4D3A /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-				FAF4B43D27872457008C4D3A /* AnimalCache.swift */,
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -917,7 +850,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA16647227A6F1E500B920F4 /* AnimalListCollectionViewCell.xib in Resources */,
 				FA16647327A6F1E500B920F4 /* LaunchScreen.storyboard in Resources */,
 				FA16647527A6F1E500B920F4 /* AnimalDetailHeaderView.xib in Resources */,
 				FA16647627A6F1E500B920F4 /* MyFavoriteViewController.storyboard in Resources */,
@@ -935,7 +867,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA97305727B3F27500E5EBA8 /* DogListViewController.storyboard in Resources */,
-				FA245B522791DF9F0053BFF5 /* AnimalListCollectionViewCell.xib in Resources */,
 				FA63D7392781C43C001ED17C /* LaunchScreen.storyboard in Resources */,
 				FA62DCD6278DB7B00096B523 /* AnimalDetailHeaderView.xib in Resources */,
 				FA97306227B3FCCC00E5EBA8 /* CatListViewController.storyboard in Resources */,
@@ -1086,9 +1017,7 @@
 				FA16645227A6F1E500B920F4 /* AnimalDetailHeaderView.swift in Sources */,
 				FA16645327A6F1E500B920F4 /* LoadingViewController.swift in Sources */,
 				FA16645427A6F1E500B920F4 /* Ext_NumberFormatter.swift in Sources */,
-				FA16645527A6F1E500B920F4 /* AnimalViewModel.swift in Sources */,
 				FA16645627A6F1E500B920F4 /* GeneralTool.swift in Sources */,
-				FA16645727A6F1E500B920F4 /* AnimalCache.swift in Sources */,
 				FA16645827A6F1E500B920F4 /* Ext_UIColor.swift in Sources */,
 				FA16645927A6F1E500B920F4 /* AnimalViewController.swift in Sources */,
 				FA16645A27A6F1E500B920F4 /* FileDataCacheConfig.swift in Sources */,
@@ -1103,7 +1032,6 @@
 				FA16646327A6F1E500B920F4 /* Logger.swift in Sources */,
 				FA16646427A6F1E500B920F4 /* ReloadTime.swift in Sources */,
 				FA16646527A6F1E500B920F4 /* Ext_Calendar.swift in Sources */,
-				FA16646627A6F1E500B920F4 /* AnimalListCollectionViewCell.swift in Sources */,
 				FA16646727A6F1E500B920F4 /* Ext_DateFormatter.swift in Sources */,
 				FA16646827A6F1E500B920F4 /* Ext_Encodable.swift in Sources */,
 				FA16646A27A6F1E500B920F4 /* MyFavoriteViewModel.swift in Sources */,
@@ -1130,11 +1058,9 @@
 				FA62DCD4278DB7290096B523 /* AnimalDetailHeaderView.swift in Sources */,
 				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
 				FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */,
-				FAA9B423278759B40066F26E /* AnimalViewModel.swift in Sources */,
 				FA97305527B3F26F00E5EBA8 /* DogListViewController.swift in Sources */,
 				FA97305327B3F1F000E5EBA8 /* AnimalListTableViewCell.swift in Sources */,
 				FAF4B43627870A3E008C4D3A /* GeneralTool.swift in Sources */,
-				FAF4B43E27872457008C4D3A /* AnimalCache.swift in Sources */,
 				FAA9B41E278756D40066F26E /* Ext_UIColor.swift in Sources */,
 				FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */,
 				FA97305A27B3F6C600E5EBA8 /* DogListViewModel.swift in Sources */,
@@ -1153,8 +1079,6 @@
 				FA97307527B4026400E5EBA8 /* OtherListViewModel.swift in Sources */,
 				FA97306827B3FF5C00E5EBA8 /* CatListCache.swift in Sources */,
 				FAF4B4122786F1C8008C4D3A /* Ext_Calendar.swift in Sources */,
-				FA245B512791DF9F0053BFF5 /* AnimalListCollectionViewCell.swift in Sources */,
-				FAEFF4FC27B1424600CDFED3 /* AnimalTypeTabView.swift in Sources */,
 				FA97306C27B4016E00E5EBA8 /* OtherListViewController.swift in Sources */,
 				FAF4B40E2786F19B008C4D3A /* Ext_DateFormatter.swift in Sources */,
 				FAF4B42A2786F90F008C4D3A /* Ext_Encodable.swift in Sources */,
