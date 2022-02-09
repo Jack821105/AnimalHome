@@ -81,6 +81,7 @@
 		FA97306E27B4017400E5EBA8 /* OtherListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97306D27B4017400E5EBA8 /* OtherListViewController.storyboard */; };
 		FA97307227B4021100E5EBA8 /* OtherCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97307127B4021100E5EBA8 /* OtherCache.swift */; };
 		FA97307527B4026400E5EBA8 /* OtherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97307427B4026400E5EBA8 /* OtherListViewModel.swift */; };
+		FA97307927B4062F00E5EBA8 /* AnimalTypeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97307827B4062F00E5EBA8 /* AnimalTypeTabView.swift */; };
 		FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */; };
 		FA9ABD182781D82A0097B473 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ABD172781D82A0097B473 /* AnimalViewController.swift */; };
 		FAA9B41C2787512F0066F26E /* AnimalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */; };
@@ -175,6 +176,7 @@
 		FA97306D27B4017400E5EBA8 /* OtherListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OtherListViewController.storyboard; sourceTree = "<group>"; };
 		FA97307127B4021100E5EBA8 /* OtherCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCache.swift; sourceTree = "<group>"; };
 		FA97307427B4026400E5EBA8 /* OtherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherListViewModel.swift; sourceTree = "<group>"; };
+		FA97307827B4062F00E5EBA8 /* AnimalTypeTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalTypeTabView.swift; sourceTree = "<group>"; };
 		FA9ABD132781D2EF0097B473 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		FA9ABD172781D82A0097B473 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		FAA9B41B2787512F0066F26E /* AnimalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimalViewController.storyboard; sourceTree = "<group>"; };
@@ -521,6 +523,22 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		FA97307627B4060200E5EBA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA97307727B4061900E5EBA8 /* AnimalTypeTabView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA97307727B4061900E5EBA8 /* AnimalTypeTabView */ = {
+			isa = PBXGroup;
+			children = (
+				FA97307827B4062F00E5EBA8 /* AnimalTypeTabView.swift */,
+			);
+			path = AnimalTypeTabView;
+			sourceTree = "<group>";
+		};
 		FA9ABD112781D2640097B473 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +550,7 @@
 		FA9ABD152781D7F60097B473 /* AnimalTab */ = {
 			isa = PBXGroup;
 			children = (
+				FA97307627B4060200E5EBA8 /* View */,
 				FA9ABD162781D8080097B473 /* ViewController */,
 			);
 			path = AnimalTab;
@@ -1053,6 +1072,7 @@
 				FAF040AB279D369E00025046 /* MyFavoriteTableViewCell.swift in Sources */,
 				FA63D72D2781C43B001ED17C /* AppDelegate.swift in Sources */,
 				FAF4B40A2786E819008C4D3A /* NibInstantiable.swift in Sources */,
+				FA97307927B4062F00E5EBA8 /* AnimalTypeTabView.swift in Sources */,
 				FAF4B40C2786F0E4008C4D3A /* UIViewInstantiable.swift in Sources */,
 				FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */,
 				FA62DCD4278DB7290096B523 /* AnimalDetailHeaderView.swift in Sources */,
@@ -1313,7 +1333,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 220204.1.99;
+				CURRENT_PROJECT_VERSION = 220209.0.99;
 				DEVELOPMENT_TEAM = H9P8S2RG7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnimalHome/Info.plist;
@@ -1348,7 +1368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 220204.1.99;
+				CURRENT_PROJECT_VERSION = 220209.0.99;
 				DEVELOPMENT_TEAM = H9P8S2RG7V;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnimalHome/Info.plist;
