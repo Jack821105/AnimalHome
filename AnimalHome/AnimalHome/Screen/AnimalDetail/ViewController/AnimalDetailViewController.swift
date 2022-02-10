@@ -16,6 +16,8 @@ extension AnimalDetailViewController: StoryboardInstantiable {}
 
 class AnimalDetailViewController: UIViewController {
 
+    // MARK: - UI Properties
+    
     private lazy var tabelView: UITableView = {
         let view = UITableView()
         view.separatorStyle = .none
@@ -24,10 +26,13 @@ class AnimalDetailViewController: UIViewController {
         return view
     }()
     
-    private lazy var headerView: AnimalDetailHeaderView = {
+    private lazy var bigHeadeImageView: AnimalDetailHeaderView = {
         let view = AnimalDetailHeaderView.instantiate()
         return view
     }()
+    
+    
+    // MARK: - Properties
     
     private var info: Animal?
      
@@ -36,6 +41,7 @@ class AnimalDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "浪浪自我介紹"
         setupUI()
         register()
         setupTableView()
@@ -43,15 +49,25 @@ class AnimalDetailViewController: UIViewController {
     
     
     func setInfo(info: Animal) {
-        self.headerView.set(info: info)
+        self.bigHeadeImageView.set(info: info)
         self.info = info
     }
     
     
     private func setupUI() {
+        
+        self.view.addSubview(bigHeadeImageView)
+        bigHeadeImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.bigHeadeImageView.snp.makeConstraints {
+            $0.left.top.right.equalTo(self.view).offset(0)
+            $0.height.lessThanOrEqualTo(AnimalDetailHeaderView.height)
+        }
+        
+        
         self.view.addSubview(tabelView)
         tabelView.snp.makeConstraints {
-            $0.left.top.right.bottom.equalTo(self.view).offset(0)
+            $0.top.equalTo(self.bigHeadeImageView.snp.bottom).offset(0)
+            $0.left.right.bottom.equalTo(self.view).offset(0)
         }
     }
 
@@ -70,24 +86,6 @@ class AnimalDetailViewController: UIViewController {
 // MARK: - UITableViewDelegate
 
 extension AnimalDetailViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        switch section {
-        case 0:
-            return headerView
-        default:
-            return nil
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch section {
-        case 0:
-            return AnimalDetailHeaderView.height
-        default:
-            return 0
-        }
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

@@ -18,6 +18,7 @@ class CatListViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let view = UITableView()
+        view.backgroundColor = .black34Color
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
         return view
@@ -71,6 +72,13 @@ extension CatListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return AnimalListTableViewCell.height
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = AnimalDetailViewController.instantiate()
+        let info = viewModel.infos[indexPath.row]
+        vc.setInfo(info: info)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

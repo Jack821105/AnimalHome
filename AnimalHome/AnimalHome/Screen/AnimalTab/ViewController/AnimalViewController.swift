@@ -77,14 +77,14 @@ class AnimalViewController: UIViewController {
         self.view.backgroundColor = .clear
         setupTabView()
         setupPageViewController()
+        setupBannerView()
         handleViewControllerDirection(index: currentTabIndex, animated: false)
-//        bannerView.load(GADRequest())
+        bannerView.load(GADRequest())
     }
     
     // MARK: - SetupUI
     
     private func setupTabView() {
-//        tabView.delegate = self
         let pageTitles = pageTypes.map {
             $0.getTitle()
         }
@@ -109,6 +109,16 @@ class AnimalViewController: UIViewController {
         pageViewController.view.topAnchor.constraint(equalTo: tabView.bottomAnchor).isActive = true
         pageViewController.view.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
+    
+    private func setupBannerView() {
+        self.pageViewController.view.addSubview(bannerView)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        bannerView.snp.makeConstraints { make in
+            make.left.right.bottom.equalTo(self.pageViewController.view).offset(0)
+            make.height.lessThanOrEqualTo(40)
+        }
+    }
+    
 }
 
 

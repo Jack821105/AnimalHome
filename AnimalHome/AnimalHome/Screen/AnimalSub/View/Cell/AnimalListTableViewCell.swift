@@ -45,7 +45,7 @@ class AnimalListTableViewCell: UITableViewCell {
         
         animalImageView.sd_setImage(with: URL(string: info.urlImage!)) { _, error, _, _ in
             if let _ = error {
-                self.animalImageView.image = UIImage(named: "cat-animal")
+                self.animalImageView.image = UIImage(named: "noImage")
             }
         }
         

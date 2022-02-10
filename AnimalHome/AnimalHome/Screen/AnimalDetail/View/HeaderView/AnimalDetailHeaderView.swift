@@ -25,10 +25,13 @@ class AnimalDetailHeaderView: UIView {
     }
     
     func set(info: Animal) {
-        guard let url = URL(string: info.urlImage!) else { return }
+        guard let url = URL(string: info.urlImage!) else {
+            self.animalImageView.image = UIImage(named: "noImage")
+            return
+        }
         animalImageView.sd_setImage(with: url) { _, error, _, _ in
             if let _ = error {
-                print("失敗")
+                self.animalImageView.image = UIImage(named: "noImage")
             }
         }
     }
