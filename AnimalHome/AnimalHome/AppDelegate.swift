@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav = UINavigationController(rootViewController: landingVC)
         window.rootViewController = nav
         window.makeKeyAndVisible()
+        window.overrideUserInterfaceStyle = .light
         self.window = window
         
         
