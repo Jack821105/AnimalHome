@@ -12,7 +12,6 @@ import UIKit
 extension MyFavoriteViewController: StoryboardInstantiable {}
 
 class MyFavoriteViewController: UIViewController {
-
     
     // MARK: - IBOutlet
     
@@ -32,16 +31,10 @@ class MyFavoriteViewController: UIViewController {
         self.view.backgroundColor = .black34Color
         register()
         setupTableView()
+        setupRefreshController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // TOOD: - 處理viewmodle的生命週期
-        viewModel.getFileData()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
+    // MARK: - Setup UI
     
     private func register() {
         let nib = UINib(nibName: MyFavoriteTableViewCell.nibName, bundle: nil)
@@ -51,6 +44,28 @@ class MyFavoriteViewController: UIViewController {
     private func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    }
+    
+    private func setupRefreshController() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+        refreshControl.tintColor = .white
+        tableView.refreshControl = refreshControl
+    }
+    
+    /// 下拉重新整理
+    @objc
+    private func handleRefreshControl() {
+        
+        // 為了讓使用者感覺有更新，所以慢一秒
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+            
+            guard let self = self else { return }
+            
+            self.tableView.reloadData()
+            
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
     
 }

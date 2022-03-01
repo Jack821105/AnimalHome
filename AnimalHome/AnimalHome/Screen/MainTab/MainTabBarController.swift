@@ -20,6 +20,7 @@ class MainTabBarController: UITabBarController {
         return vc
     }()
     
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class MainTabBarController: UITabBarController {
         let na1 = UINavigationController(rootViewController: AnimalVC)
         let na2 = UINavigationController(rootViewController: MyFavoriteVC)
         
-        viewControllers = [na1]
+        viewControllers = [na1, na2]
         
         let tabOneBarItem1 = UITabBarItem(title: "主頁", image: UIImage(named: "mainTabIcon"), selectedImage: UIImage(named: "selectedImage.png"))
         

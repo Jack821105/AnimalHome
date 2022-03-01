@@ -15,7 +15,8 @@ import FirebaseRemoteConfig
 extension AnimalDetailViewController: StoryboardInstantiable {}
 
 class AnimalDetailViewController: UIViewController {
-
+    
+    
     // MARK: - UI Properties
     
     private lazy var tabelView: UITableView = {
@@ -26,6 +27,13 @@ class AnimalDetailViewController: UIViewController {
         return view
     }()
     
+    private lazy var favoriteButtonView: FavoriteButtonView = {
+        let view = FavoriteButtonView.instantiate()
+        view.delegate = self
+        return view
+    }()
+    
+    
     private lazy var bigHeadeImageView: AnimalDetailHeaderView = {
         let view = AnimalDetailHeaderView.instantiate()
         return view
@@ -35,13 +43,17 @@ class AnimalDetailViewController: UIViewController {
     // MARK: - Properties
     
     private var info: Animal?
-     
+    
+    private lazy var viewModel: AnimalDetailViewModel = {
+        return AnimalDetailViewModel()
+    }()
+    
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "浪浪自我介紹"
+        setupNavigation()
         setupUI()
         register()
         setupTableView()
@@ -70,7 +82,7 @@ class AnimalDetailViewController: UIViewController {
             $0.left.right.bottom.equalTo(self.view).offset(0)
         }
     }
-
+    
     private func register() {
         let nib = UINib(nibName: AnimalDetailTableViewCell.nibName, bundle: nil)
         tabelView.register(nib, forCellReuseIdentifier: AnimalDetailTableViewCell.nibName)
@@ -80,7 +92,15 @@ class AnimalDetailViewController: UIViewController {
         tabelView.delegate = self
         tabelView.dataSource = self
     }
-
+    
+    private func setupNavigation() {
+        navigationItem.title = "浪浪自我介紹"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: favoriteButtonView)
+        
+    }
+    
+    
+    
 }
 
 // MARK: - UITableViewDelegate
@@ -99,7 +119,7 @@ extension AnimalDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 11
-    
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -173,4 +193,14 @@ extension AnimalDetailViewController: UITableViewDataSource {
     }
     
     
+}
+
+
+// MARK: - FavoriteButtonViewDelegate
+extension AnimalDetailViewController: FavoriteButtonViewDelegate {
+    func didTapFavoriteButton(hadAddMyFavorite: Bool) {
+        guard var info = info else { return }
+        info.hadAddMyFavorite = hadAddMyFavorite
+        viewModel.writeData(info: info)
+    }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="FavoriteButtonView" id="iN0-l3-epB" customClass="FavoriteButtonView" customModule="AnimalHome" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="382" height="391"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pT8-2H-6Gv">
+                    <rect key="frame" x="0.0" y="45.5" width="382" height="344.5"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1XQ-ec-nbI">
+                    <rect key="frame" x="0.0" y="44" width="382" height="347"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="didTapHeartView:" destination="iN0-l3-epB" eventType="touchUpInside" id="BW5-ni-BeN"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pT8-2H-6Gv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1oG-oO-P6e"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1XQ-ec-nbI" secondAttribute="bottom" id="4Tt-dn-quq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pT8-2H-6Gv" secondAttribute="bottom" id="4zo-b2-oA9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1XQ-ec-nbI" secondAttribute="trailing" id="IOQ-Q9-oAF"/>
+                <constraint firstItem="1XQ-ec-nbI" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bz1-gw-p7D"/>
+                <constraint firstItem="pT8-2H-6Gv" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="jT9-C1-Zn4"/>
+                <constraint firstItem="1XQ-ec-nbI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lkE-jm-yxh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pT8-2H-6Gv" secondAttribute="trailing" id="rvj-5n-QLG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="heartImageView" destination="pT8-2H-6Gv" id="lqy-hx-Dg8"/>
+            </connections>
+            <point key="canvasLocation" x="114.49275362318842" y="-73.325892857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+    </resources>
+</document>

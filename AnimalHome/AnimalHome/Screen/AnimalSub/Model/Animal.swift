@@ -61,6 +61,9 @@ struct Animal: Codable {
     /// 圖片來源
     let urlImage: String?
     
+    /// 是否加到我最愛
+    var hadAddMyFavorite: Bool = false
+    
     
     enum CodingKeys: String, CodingKey {
         case id = "animal_id"

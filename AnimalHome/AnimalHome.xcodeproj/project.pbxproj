@@ -89,6 +89,9 @@
 		FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */; };
 		FAC0E5752794873800E0E0E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */; };
 		FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */; };
+		FAEC14D227C9DEF60065EEB6 /* FavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC14D127C9DEF60065EEB6 /* FavoriteButtonView.swift */; };
+		FAEC14D427C9DF290065EEB6 /* FavoriteButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAEC14D327C9DF290065EEB6 /* FavoriteButtonView.xib */; };
+		FAEC14D727CDACCB0065EEB6 /* AnimalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEC14D627CDACCB0065EEB6 /* AnimalDetailViewModel.swift */; };
 		FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF04089279C1F3900025046 /* MyFavoriteManager.swift */; };
 		FAF0409D279D31E400025046 /* MyFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */; };
 		FAF0409F279D31EA00025046 /* MyFavoriteViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */; };
@@ -184,6 +187,9 @@
 		FAA9B41F2787570E0066F26E /* Ext_UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIFont.swift; sourceTree = "<group>"; };
 		FAC0E5742794873800E0E0E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		FAEC14D127C9DEF60065EEB6 /* FavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonView.swift; sourceTree = "<group>"; };
+		FAEC14D327C9DF290065EEB6 /* FavoriteButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteButtonView.xib; sourceTree = "<group>"; };
+		FAEC14D627CDACCB0065EEB6 /* AnimalDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalDetailViewModel.swift; sourceTree = "<group>"; };
 		FAF04089279C1F3900025046 /* MyFavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteManager.swift; sourceTree = "<group>"; };
 		FAF0409C279D31E400025046 /* MyFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFavoriteViewController.swift; sourceTree = "<group>"; };
 		FAF0409E279D31EA00025046 /* MyFavoriteViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyFavoriteViewController.storyboard; sourceTree = "<group>"; };
@@ -279,6 +285,7 @@
 		FA3071A4278A06240021B006 /* AnimalDetail */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC14D527CDACB30065EEB6 /* ViewModel */,
 				FA62DCD0278DB6A10096B523 /* View */,
 				FA3071A5278A08050021B006 /* ViewController */,
 			);
@@ -297,6 +304,7 @@
 		FA62DCD0278DB6A10096B523 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAEC14D027C9DEC30065EEB6 /* FavoriteButtonView */,
 				FA62DCD7278DBCD40096B523 /* Cell */,
 				FA62DCD1278DB6EA0096B523 /* HeaderView */,
 			);
@@ -451,8 +459,8 @@
 		FA97304F27B3F1F000E5EBA8 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				FA97305027B3F1F000E5EBA8 /* AnimalListTableViewCell.xib */,
 				FA97305127B3F1F000E5EBA8 /* AnimalListTableViewCell.swift */,
+				FA97305027B3F1F000E5EBA8 /* AnimalListTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -584,6 +592,23 @@
 				FADBC2AD2781CABC00B9A26B /* LoadingViewController.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		FAEC14D027C9DEC30065EEB6 /* FavoriteButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC14D127C9DEF60065EEB6 /* FavoriteButtonView.swift */,
+				FAEC14D327C9DF290065EEB6 /* FavoriteButtonView.xib */,
+			);
+			path = FavoriteButtonView;
+			sourceTree = "<group>";
+		};
+		FAEC14D527CDACB30065EEB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAEC14D627CDACCB0065EEB6 /* AnimalDetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FAF04087279C1EF300025046 /* Manager */ = {
@@ -897,6 +922,7 @@
 				FA97306E27B4017400E5EBA8 /* OtherListViewController.storyboard in Resources */,
 				FA3071A9278A083A0021B006 /* AnimalDetailViewController.storyboard in Resources */,
 				FA62DCDB278DBCF10096B523 /* AnimalDetailTableViewCell.xib in Resources */,
+				FAEC14D427C9DF290065EEB6 /* FavoriteButtonView.xib in Resources */,
 				FA63D7362781C43C001ED17C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1077,6 +1103,7 @@
 				FAA9B4202787570E0066F26E /* Ext_UIFont.swift in Sources */,
 				FA62DCD4278DB7290096B523 /* AnimalDetailHeaderView.swift in Sources */,
 				FADBC2AE2781CABC00B9A26B /* LoadingViewController.swift in Sources */,
+				FAEC14D227C9DEF60065EEB6 /* FavoriteButtonView.swift in Sources */,
 				FAF4B4142786F2EA008C4D3A /* Ext_NumberFormatter.swift in Sources */,
 				FA97305527B3F26F00E5EBA8 /* DogListViewController.swift in Sources */,
 				FA97305327B3F1F000E5EBA8 /* AnimalListTableViewCell.swift in Sources */,
@@ -1090,6 +1117,7 @@
 				FA9ABD142781D2EF0097B473 /* MainTabBarController.swift in Sources */,
 				FAF4B43927871F7F008C4D3A /* DomainManager.swift in Sources */,
 				FAF4B4342787042B008C4D3A /* APIManager.swift in Sources */,
+				FAEC14D727CDACCB0065EEB6 /* AnimalDetailViewModel.swift in Sources */,
 				FA97305D27B3F9CD00E5EBA8 /* DogListCahce.swift in Sources */,
 				FA62DCDA278DBCF10096B523 /* AnimalDetailTableViewCell.swift in Sources */,
 				FAF0408A279C1F3900025046 /* MyFavoriteManager.swift in Sources */,

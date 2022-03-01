@@ -14,8 +14,6 @@ protocol MyFavoriteViewModelDelegate: AnyObject {
 
 class MyFavoriteViewModel {
     
-    weak var delegate: MyFavoriteViewModelDelegate?
-    
     
     func getFileData() -> [Animal] {
         print("JACK DEV \(MyFavoriteManager.shared.readData().count)")
