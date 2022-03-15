@@ -1,0 +1,70 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.0'
+
+
+def google_pod_install
+  
+   # 分析
+  pod 'Firebase/Analytics'
+  
+  # 雲消息
+  pod 'Firebase/Messaging'
+
+  # 崩潰報告
+  pod 'Firebase/Crashlytics'
+
+  # 動態鏈接
+  pod 'Firebase/DynamicLinks'
+
+  # 應用內消息
+  pod 'Firebase/InAppMessaging'
+
+  # 性能監控
+  pod 'Firebase/Performance'
+
+end
+
+def animal_pod_install
+
+    # 網路協定
+    pod 'Alamofire', '~> 5.5'
+
+    # 下載圖片
+    pod 'SDWebImage', '~> 5.0'
+
+    # 靜態檢查codestyle
+    pod 'SwiftLint'
+
+    # make Auto Layout easy
+    pod 'SnapKit', '~> 5.0.0'
+
+end  
+
+
+
+
+target 'AnimalHome' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AnimalHome
+
+    animal_pod_install
+    google_pod_install
+    pod 'Google-Mobile-Ads-SDK'
+
+
+
+  target 'AnimalHomeTests' do
+    inherit! :search_paths
+    # Pods for testing
+    
+   
+
+  end
+
+  target 'AnimalHomeUITests' do
+    # Pods for testing
+  end
+
+end
